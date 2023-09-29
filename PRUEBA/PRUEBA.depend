@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1695187176 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\prueba\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<unordered_map>
+	<algorithm>
+	<windows.h>
+	<cstdlib>
+

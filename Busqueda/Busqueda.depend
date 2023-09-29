@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1693667818 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\busqueda\main.cpp
+	<iostream>
+
+1692980842 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\busqueda\listaenteros.h
+
+1693931099 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act-1.2-algoritmos de busqueda-a00572499.cpp
+	<iostream>
+	<vector>
+

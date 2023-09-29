@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1694206742 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act-1.3\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<unordered_map>
+	<algorithm>
+

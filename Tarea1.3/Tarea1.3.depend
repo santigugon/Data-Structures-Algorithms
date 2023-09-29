@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1693973983 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\tarea1.3\main.cpp
+	<iostream>
+	<vector>
+	<iterator>
+
