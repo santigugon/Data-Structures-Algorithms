@@ -11,7 +11,7 @@ class MyQueue{
         int peek();
         bool isEmpty();
         int length();
-        void flush();
+        void flush(); //TAREA
 
 };
 

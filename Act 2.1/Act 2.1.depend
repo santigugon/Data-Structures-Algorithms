@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1696001450 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.1\main.cpp
+1696028504 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.1\main.cpp
 	<iostream>
 	"MyLinkedList.h"
 
-1696002204 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.1\mylinkedlist.cpp
+1696028487 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.1\mylinkedlist.cpp
 	"MyLinkedList.h"
 	<iostream>
 
-1695934006 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.1\mylinkedlist.h
+1696025696 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.1\mylinkedlist.h
 	<iostream>
 

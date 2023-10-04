@@ -7,3 +7,5 @@ void MyStack::push(int data){
 void MyStack::pop(){
     this->lista.removeFirst();
 }
+
+int MyStack()

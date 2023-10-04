@@ -7,7 +7,36 @@ int main()
 {
 
     MyLinkedList lista;
-    lista.insertFirst(4);
+    //lista.first();
+    //lista.last();
+    lista.insertFirst(1);
+
+    cout<<"Head"<<lista.head->data<<endl;
+    cout<<"TAIL"<<lista.tail->data<<endl;
+    cout<<lista<<endl;
+    lista.insertFirst(2);
+
+    cout<<"Head"<<lista.head->data<<endl;
+    cout<<"TAIL"<<lista.tail->data<<endl;
+    cout<<lista<<endl;
+    lista.insertFirst(3);
+    cout<<"Head"<<lista.head->data<<endl;
+    cout<<"TAIL"<<lista.tail->data<<endl;
+    cout<<lista<<endl;
+    lista.insertLast(4);
+    lista.insertAt(-1,5);
+    cout<<"Head"<<lista.head->data<<endl;
+    cout<<"TAIL"<<lista.tail->data<<endl;
+    lista.insertLast(5);
+    cout<<lista<<endl;
+    cout<<lista.last()<<endl;
+    cout<<"Head"<<lista.head->data<<endl;
+    cout<<"TAIL"<<lista.tail->data<<endl;
+
+
+    cout<<"Head"<<lista.head->data<<endl;
+    cout<<"TAIL"<<lista.tail->data<<endl;
+    cout<<lista<<endl;
     lista.insertLast(8);
     lista.insertLast(3);
     lista.insertLast(7);
@@ -15,7 +44,6 @@ int main()
     lista.setAt(3,6);
     //lista.removeLast();
     //std::cout<<"En la posicion 3 tenemos="<<lista.getAt(3)<<std::endl;
-    cout<<"TAIL"<<lista.tail->data<<endl;
     //lista.removeAt(3);
     cout<<lista;
     lista.print();

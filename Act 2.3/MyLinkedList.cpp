@@ -11,23 +11,23 @@ MyLinkedList::MyLinkedList(){
 //Complejidad de tipo lineal O(n)
 MyLinkedList::~MyLinkedList(){
     while(!this->isEmpty()){
-            this->removeFirst();
+        this->removeFirst();
     }
 }
 
 //Complejidad de tipo constante O(1)
-int MyLinkedList::first(){
+NodoRegistro MyLinkedList::first(){
     if(!this->isEmpty()){
-    return this->head->data;
+        return this->head->data;
     }else{
         throw std::invalid_argument("La lista esta vacia, no hay un primer elemento");
     }
 }
 
 //Complejidad de tipo constante O(1)
-int MyLinkedList::last(){
+NodoRegistro MyLinkedList::last(){
     if(!this->isEmpty()){
-    return this->tail->data;
+        return this->tail->data;
     }else{
         throw std::invalid_argument("La lista esta vacia, no hay un ultimo elemento");
     }
@@ -44,7 +44,7 @@ bool MyLinkedList::isEmpty(){
 }
 
 //Complejidad de tipo constante O(1)
-void MyLinkedList::insertFirst(int data){
+void MyLinkedList::insertFirst(NodoRegistro data){
     this->head= new MyNodoLL(data, this->head);
     if(this->size==0){
         this->tail=this->head;
@@ -53,7 +53,7 @@ void MyLinkedList::insertFirst(int data){
 }
 
 //Complejidad de tipo constante O(1)
-void MyLinkedList::insertLast(int data){
+void MyLinkedList::insertLast(NodoRegistro data){
     MyNodoLL* nodoFinal=new MyNodoLL (data);
     this->tail->next=nodoFinal;
     this->tail= nodoFinal;
@@ -65,10 +65,10 @@ void MyLinkedList::insertLast(int data){
 }
 
 //Complejidad de tipo lineal O(n)
-void MyLinkedList::insertAt(int pos, int data){
-     if(pos>this->size||pos<0){
+void MyLinkedList::insertAt(int pos, NodoRegistro data){
+    if(pos>this->size||pos<0){
         throw std::invalid_argument("La posicion es mas grande que la lista o menor a 0 " );//,pos, " en una lista de tamaño ", this->size
-     }
+    }
     else{
         if(pos==0){
             this->insertFirst(data);
@@ -80,14 +80,14 @@ void MyLinkedList::insertAt(int pos, int data){
             MyNodoLL* nodoNuevo= new MyNodoLL(data);
             MyNodoLL* actual=this->head;
             int posActual=0;
-        actual=head;
-        while(posActual<pos-1){
-            actual=actual->next;
-            posActual++;
-        }
-        nodoNuevo->next=actual->next;
-        actual->next=nodoNuevo;
-        this->size++;
+            actual=head;
+            while(posActual<pos-1){
+                actual=actual->next;
+                posActual++;
+            }
+            nodoNuevo->next=actual->next;
+            actual->next=nodoNuevo;
+            this->size++;
         }
     }
 }
@@ -99,18 +99,18 @@ void MyLinkedList::removeFirst(){
         this->head=this->head->next;
         delete aux;
         this->size--;
-    if(this->size==0){
-        this->tail=nullptr;
+        if(this->size==0){
+            this->tail=nullptr;
+        }
     }
-    }else{
+    else{
         throw std::invalid_argument("La lista esta vacia, no se puede borrar su primer elemento");
     }
-
 }
 
 //Complejidad de tipo lineal O(n)
 void MyLinkedList::removeLast(){
- if(!this->isEmpty()){
+    if(!this->isEmpty()){
         MyNodoLL* lastEl=this->tail;
         MyNodoLL* aux=this->head;
         while(aux->next!=this->tail){
@@ -120,59 +120,69 @@ void MyLinkedList::removeLast(){
         this->tail=aux;
         delete lastEl;
         this->size--;
-    }else{
+    }
+    else{
         throw std::invalid_argument("La lista esta vacia, no se puede borrar su ultimo elemento");
     }
 }
 
 //Complejidad de tipo lineal O(n)
 void MyLinkedList::removeAt(int pos){
- if(!this->isEmpty()){
-        int posI=0;
-        MyNodoLL* aux=this->head;
-        while(posI<pos-1){
-            aux=aux->next;
-            posI++;
-        }
-
-        MyNodoLL* elRemove= aux->next;
-        aux->next=elRemove->next;
-        delete elRemove;
-        this->size--;
+    if(pos>=this->size||pos<0){
+        throw std::invalid_argument("La posicion indicada no es valida o la lista esta vacia");
     }else{
-        throw std::invalid_argument("La lista esta vacia, no se puede borrar su ultimo elemento");
+        if(pos==0){
+            this->removeFirst();
+        }
+        else if(pos==this->size-1){
+            this->removeLast();
+        }else{
+            int posI=0;
+            MyNodoLL* aux=this->head;
+            while(posI<pos-1){
+                aux=aux->next;
+                posI++;
+            }
+            MyNodoLL* elRemove= aux->next;
+            aux->next=elRemove->next;
+            delete elRemove;
+            this->size--;
+        }
     }
 }
 
+/*
 //Complejidad de tipo lineal O(n)
 std::ostream& operator << (std::ostream& o, const MyLinkedList& list)
 {
     MyNodoLL* actual=list.head;
     for(int i=0;i<list.length();i++){
-        o<<actual->data<<",";
+        o<<actual->data.getMensaje()<<",";
         actual=actual->next;
     }
     return o;
 }
+*/
 
 //Complejidad de tipo lineal O(n)
-int MyLinkedList::getAt(int pos){
+NodoRegistro MyLinkedList::getAt(int pos){
     if(pos>=this->size||pos<0){
         throw std::invalid_argument("La posicion indicada no es valida o la lista esta vacia");
-    }else{
-    int posI=0;
-    MyNodoLL* aux=this->head;
-    while(posI<pos){
-        aux=aux->next;
-        posI++;
     }
-    return aux->data;
+    else{
+        int posI=0;
+        MyNodoLL* aux=this->head;
+        while(posI<pos){
+            aux=aux->next;
+            posI++;
+        }
+        return aux->data;
     }
 
 }
 
 //Complejidad de tipo lineal O(n)
-void MyLinkedList::setAt(int pos, int data){
+void MyLinkedList::setAt(int pos, NodoRegistro data){
     if(pos>=this->size||pos<0){
         throw std::invalid_argument("La posicion indicada no es valida o la lista esta vacia");
     }
@@ -184,19 +194,6 @@ void MyLinkedList::setAt(int pos, int data){
             posI++;
         }
         aux->data=data;
-    }
-}
-
-void MyLinkedList::print(){
-    MyNodoLL* actual=this->head;
-    for(int i=0;i<this->size;i++){
-        std::cout<<actual->data<<std::endl;
-        actual=actual->next;
-    }
-}
-void MyLinkedList::flush(){
-  while(!this->isEmpty()){
-            this->removeFirst();
     }
 }
 

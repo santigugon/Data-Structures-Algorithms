@@ -13,7 +13,6 @@ class MyStack{
         bool isEmpty();
         void flush();
 
-
 };
 
 

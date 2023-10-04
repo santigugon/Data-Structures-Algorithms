@@ -37,6 +37,7 @@ class MyLinkedList{ //Nos servira para guardar el inicio de la lista
         void removeAt(int pos);
         friend std::ostream& operator<<(std::ostream& o, const MyLinkedList& list);
         void print();
+        void flush();
 
 };
 
