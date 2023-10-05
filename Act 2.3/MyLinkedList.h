@@ -35,6 +35,7 @@ class MyLinkedList{
         void removeFirst();
         void removeLast();
         void removeAt(int pos);
+        void print();
        // friend std::ostream& operator<<(std::ostream& o,  MyLinkedList& list);
 
 };

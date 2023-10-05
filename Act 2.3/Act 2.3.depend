@@ -1,14 +1,16 @@
 # depslib dependency file v1.0
-1696452478 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\main.cpp
+1696460001 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\main.cpp
 	<iostream>
 	<vector>
 	<string>
+	"Bitacora.h"
+	<fstream>
 
-1696447261 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.cpp
+1696460247 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.cpp
 	"MyLinkedList.h"
 	<iostream>
 
-1696447317 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.h
+1696460222 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.h
 	"NodoRegistro.h"
 
 1696452464 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\nodoregistro.h
@@ -19,11 +21,11 @@
 1696454873 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\nodoregistro.cpp
 	"NodoRegistro.h"
 
-1696454551 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.cpp
+1696460203 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.cpp
 	"Bitacora.h"
 	<unordered_map>
 
-1696452887 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.h
+1696460008 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.h
 	"MyLinkedList.h"
 	"NodoRegistro.h"
 	<fstream>

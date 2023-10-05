@@ -11,7 +11,7 @@ class Bitacora{
         ifstream archivo;
         MyLinkedList nodosIpOrdenada;
     public:
-        Bitacora(ifstream archivo);
+        Bitacora();
 
 };
 

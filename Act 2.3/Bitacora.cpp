@@ -4,8 +4,8 @@
 using namespace std;
 
 
-Bitacora::Bitacora(ifstream archivo){
-
+Bitacora::Bitacora(){
+    ifstream archivo;
       //El mapa para representar los meses con su numero
     unordered_map<string, int>meses;
     meses["Jan"] = 1;
@@ -44,96 +44,97 @@ Bitacora::Bitacora(ifstream archivo){
             else { //Cuando la palabra si es un mes mandamos el renglon al vector de renglones y comenzamos uno nuevo
                 if (i != 0 && renglon !="") {
                     //renglones.push_back(renglon);
-                    NodoRegistro nuevoNodo(renglon,ip);
+                    NodoRegistro nuevoNodoRegistro(renglon,ip);
+                    MyNodoLL* nuevoNodo = new MyNodoLL(nuevoNodoRegistro);
                     if( this->nodosIpOrdenada.isEmpty()){
-                        this->nodosIpOrdenada.insertFirst(nuevoNodo);
+                        this->nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
                     }else{
                         MyNodoLL* actual=this->nodosIpOrdenada.head;
                         MyNodoLL* prev;
                         for(int i=0;i<this->nodosIpOrdenada.length();i++){
                             if(i==this->nodosIpOrdenada.length()-1){
-                                nodosIpOrdenada.insertLast(nuevoNodo);
+                                nodosIpOrdenada.insertLast(nuevoNodoRegistro);
                             }
-                            else if(actual->data.getJerarquia1()<nuevoNodo.getJerarquia1()){
+                            else if(actual->data.getJerarquia1()<nuevoNodoRegistro.getJerarquia1()){
                                 actual=actual->next;
                                 prev=actual;
-                            }else if(actual->data.getJerarquia1()==nuevoNodo.getJerarquia1()){
-                                if(actual->data.getJerarquia2()<nuevoNodo.getJerarquia2()){
+                            }else if(actual->data.getJerarquia1()==nuevoNodoRegistro.getJerarquia1()){
+                                if(actual->data.getJerarquia2()<nuevoNodoRegistro.getJerarquia2()){
                                     actual=actual->next;
                                     prev=actual;
                                 }
-                                else if(actual->data.getJerarquia2()==nuevoNodo.getJerarquia2()){
-                                    if(actual->data.getJerarquia3()<nuevoNodo.getJerarquia3()){
+                                else if(actual->data.getJerarquia2()==nuevoNodoRegistro.getJerarquia2()){
+                                    if(actual->data.getJerarquia3()<nuevoNodoRegistro.getJerarquia3()){
                                         actual=actual->next;
                                         prev=actual;
                                     }
-                                    else if(actual->data.getJerarquia3()==nuevoNodo.getJerarquia3()){
+                                    else if(actual->data.getJerarquia3()==nuevoNodoRegistro.getJerarquia3()){
 
-                                        if(actual->data.getJerarquia4()<nuevoNodo.getJerarquia4()){
+                                        if(actual->data.getJerarquia4()<nuevoNodoRegistro.getJerarquia4()){
                                             actual=actual->next;
                                             prev=actual;
                                         }
-                                        else if(actual->data.getJerarquia4()==nuevoNodo.getJerarquia4()){
-                                            if(actual->data.getPuerto()<nuevoNodo.getPuerto()){
+                                        else if(actual->data.getJerarquia4()==nuevoNodoRegistro.getJerarquia4()){
+                                            if(actual->data.getPuerto()<nuevoNodoRegistro.getPuerto()){
                                                 actual=actual->next;
                                                 prev=actual;
                                             }
-                                            else if(actual->data.getPuerto()==nuevoNodo.getPuerto()){
+                                            else if(actual->data.getPuerto()==nuevoNodoRegistro.getPuerto()){
                                                 nuevoNodo->next=prev->next;
                                                 prev->next=nuevoNodo;
                                                 nodosIpOrdenada.size++;
 
                                             }
-                                            else if(actual->data.getPuerto)>nuevoNodo.getPuerto()){
+                                            else if(actual->data.getPuerto()>nuevoNodoRegistro.getPuerto()){
                                                 if(i==0){
-                                                    nodosIpOrdenada.insertFirst(nuevoNodo);
+                                                    nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
                                                 }
                                                 else{
-                                                    nodoNuevo->next=prev->next;
-                                                    prev->next=nodoNuevo;
+                                                    nuevoNodo->next=prev->next;
+                                                    prev->next=nuevoNodo;
                                                     nodosIpOrdenada.size++;
                                                 }
                                             }
                                         //*
                                         }
-                                        else if(actual->data.getJerarquia4()>nuevoNodo.getJerarquia4()){
+                                        else if(actual->data.getJerarquia4()>nuevoNodoRegistro.getJerarquia4()){
                                             if(i==0){
-                                            nodosIpOrdenada.insertFirst(nuevoNodo);
+                                            nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
                                         }   else{
-                                                nodoNuevo->next=prev->next;
-                                                prev->next=nodoNuevo;
+                                                nuevoNodo->next=prev->next;
+                                                prev->next=nuevoNodo;
                                                 nodosIpOrdenada.size++;
                                             }
                                         }
                         //***
                                     }
-                                    else if(actual->data.getJerarquia3()>nuevoNodo.getJerarquia3()){
+                                    else if(actual->data.getJerarquia3()>nuevoNodoRegistro.getJerarquia3()){
                                         if(i==0){
-                                            nodosIpOrdenada.insertFirst(nuevoNodo);
+                                            nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
                                         }else{
-                                            nodoNuevo->next=prev->next;
-                                            prev->next=nodoNuevo;
+                                            nuevoNodo->next=prev->next;
+                                            prev->next=nuevoNodo;
                                             nodosIpOrdenada.size++;
                                         }
                                     }
                                 }
                                 //*
-                                else if(actual->data.getJerarquia2()>nuevoNodo.getJerarquia2()){
+                                else if(actual->data.getJerarquia2()>nuevoNodoRegistro.getJerarquia2()){
                                     if(i==0){
-                                        nodosIpOrdenada.insertFirst(nuevoNodo);
+                                        nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
                                     }else{
-                                        nodoNuevo->next=prev->next;
-                                        prev->next=nodoNuevo;
+                                        nuevoNodo->next=prev->next;
+                                        prev->next=nuevoNodo;
                                         nodosIpOrdenada.size++;
                                     }
                                 }
 
-                            }else if(actual->data.getJerarquia1()>nuevoNodo.getJerarquia1()){
+                            }else if(actual->data.getJerarquia1()>nuevoNodoRegistro.getJerarquia1()){
                                 if(i==0){
-                                    nodosIpOrdenada.insertFirst(nuevoNodo);
+                                    nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
                                 }else{
-                                    nodoNuevo->next=prev->next;
-                                    prev->next=nodoNuevo;
+                                    nuevoNodo->next=prev->next;
+                                    prev->next=nuevoNodo;
                                     nodosIpOrdenada.size++;
                                 }
 
@@ -153,6 +154,6 @@ Bitacora::Bitacora(ifstream archivo){
 
         }
     }
-
+    this->nodosIpOrdenada.print();
 }
 

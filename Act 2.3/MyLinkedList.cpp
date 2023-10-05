@@ -197,4 +197,10 @@ void MyLinkedList::setAt(int pos, NodoRegistro data){
     }
 }
 
-
+void MyLinkedList::print(){
+    MyNodoLL* actual=this->head;
+    for(int i=0;i<this->length();i++){
+        cout<<actual->data.getMensaje()<<endl;
+        actual=actual->next;
+    }
+}
