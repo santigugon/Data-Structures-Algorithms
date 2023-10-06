@@ -34,8 +34,11 @@ public:
     void setJerarquia2(int newJerarquia2);
     void setJerarquia3(int newJerarquia3);
     void setJerarquia4(int newJerarquia4);
-    void createJerarquias();
     void setPuerto(int newPuerto);
+
+
+    void createJerarquias();
+    bool compareTwoNodos(NodoRegistro &nodo2);
 };
 
 

@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Bitacora.cpp" />
+		<Unit filename="Bitacora.h" />
+		<Unit filename="MyLinkedList.cpp" />
+		<Unit filename="MyLinkedList.h" />
+		<Unit filename="NodoRegistro.cpp" />
+		<Unit filename="NodoRegistro.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

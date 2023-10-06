@@ -5,6 +5,7 @@ using namespace std;
 
 
 Bitacora::Bitacora(){
+    cout<<"Hola mundo"<<endl;
     ifstream archivo;
       //El mapa para representar los meses con su numero
     unordered_map<string, int>meses;
@@ -46,104 +47,11 @@ Bitacora::Bitacora(){
                     //renglones.push_back(renglon);
                     NodoRegistro nuevoNodoRegistro(renglon,ip);
                     MyNodoLL* nuevoNodo = new MyNodoLL(nuevoNodoRegistro);
-                    if( this->nodosIpOrdenada.isEmpty()){
-                        this->nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
-                    }else{
-                        MyNodoLL* actual=this->nodosIpOrdenada.head;
-                        MyNodoLL* prev;
-                        for(int i=0;i<this->nodosIpOrdenada.length();i++){
-                            if(i==this->nodosIpOrdenada.length()-1){
-                                nodosIpOrdenada.insertLast(nuevoNodoRegistro);
-                            }
-                            else if(actual->data.getJerarquia1()<nuevoNodoRegistro.getJerarquia1()){
-                                actual=actual->next;
-                                prev=actual;
-                            }else if(actual->data.getJerarquia1()==nuevoNodoRegistro.getJerarquia1()){
-                                if(actual->data.getJerarquia2()<nuevoNodoRegistro.getJerarquia2()){
-                                    actual=actual->next;
-                                    prev=actual;
-                                }
-                                else if(actual->data.getJerarquia2()==nuevoNodoRegistro.getJerarquia2()){
-                                    if(actual->data.getJerarquia3()<nuevoNodoRegistro.getJerarquia3()){
-                                        actual=actual->next;
-                                        prev=actual;
-                                    }
-                                    else if(actual->data.getJerarquia3()==nuevoNodoRegistro.getJerarquia3()){
 
-                                        if(actual->data.getJerarquia4()<nuevoNodoRegistro.getJerarquia4()){
-                                            actual=actual->next;
-                                            prev=actual;
-                                        }
-                                        else if(actual->data.getJerarquia4()==nuevoNodoRegistro.getJerarquia4()){
-                                            if(actual->data.getPuerto()<nuevoNodoRegistro.getPuerto()){
-                                                actual=actual->next;
-                                                prev=actual;
-                                            }
-                                            else if(actual->data.getPuerto()==nuevoNodoRegistro.getPuerto()){
-                                                nuevoNodo->next=prev->next;
-                                                prev->next=nuevoNodo;
-                                                nodosIpOrdenada.size++;
-
-                                            }
-                                            else if(actual->data.getPuerto()>nuevoNodoRegistro.getPuerto()){
-                                                if(i==0){
-                                                    nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
-                                                }
-                                                else{
-                                                    nuevoNodo->next=prev->next;
-                                                    prev->next=nuevoNodo;
-                                                    nodosIpOrdenada.size++;
-                                                }
-                                            }
-                                        //*
-                                        }
-                                        else if(actual->data.getJerarquia4()>nuevoNodoRegistro.getJerarquia4()){
-                                            if(i==0){
-                                            nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
-                                        }   else{
-                                                nuevoNodo->next=prev->next;
-                                                prev->next=nuevoNodo;
-                                                nodosIpOrdenada.size++;
-                                            }
-                                        }
-                        //***
-                                    }
-                                    else if(actual->data.getJerarquia3()>nuevoNodoRegistro.getJerarquia3()){
-                                        if(i==0){
-                                            nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
-                                        }else{
-                                            nuevoNodo->next=prev->next;
-                                            prev->next=nuevoNodo;
-                                            nodosIpOrdenada.size++;
-                                        }
-                                    }
-                                }
-                                //*
-                                else if(actual->data.getJerarquia2()>nuevoNodoRegistro.getJerarquia2()){
-                                    if(i==0){
-                                        nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
-                                    }else{
-                                        nuevoNodo->next=prev->next;
-                                        prev->next=nuevoNodo;
-                                        nodosIpOrdenada.size++;
-                                    }
-                                }
-
-                            }else if(actual->data.getJerarquia1()>nuevoNodoRegistro.getJerarquia1()){
-                                if(i==0){
-                                    nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
-                                }else{
-                                    nuevoNodo->next=prev->next;
-                                    prev->next=nuevoNodo;
-                                    nodosIpOrdenada.size++;
-                                }
-
-                            }
-                        }
-
+                    nodosIpOrdenada.insertFirst(nuevoNodoRegistro);
                     }
 
-                }
+
                 renglon = "";
                 renglon.append(palabra);
                 renglon.append(" ");
@@ -153,7 +61,144 @@ Bitacora::Bitacora(){
             i++;
 
         }
+        NodoRegistro nuevoNodoRegistro(renglon,ip);
+        MyNodoLL* nuevoNodo = new MyNodoLL(nuevoNodoRegistro);
+        nodosIpOrdenada.insertLast(nuevoNodoRegistro);
+
     }
-    this->nodosIpOrdenada.print();
+
+
+   //this->nodosIpOrdenada.print();
 }
 
+MyNodoLL* Bitacora::mergeSort(MyNodoLL* lista1, MyNodoLL* lista2){
+    MyNodoLL* nodoFinal = nullptr;
+
+    if(lista1==nullptr)
+        return lista2;
+    else if(lista2==nullptr)
+        return lista1;
+
+    if(!lista1->data.compareTwoNodos(lista2->data)){
+        nodoFinal=lista1;
+        nodoFinal->next= mergeSort(lista1->next,lista2);
+    }
+    else{
+        nodoFinal=lista2;
+        nodoFinal->next= mergeSort(lista1,lista2->next);
+    }
+    return nodoFinal;
+
+
+
+}
+void Mezcla(MyNodoLL* cabeza, MyNodoLL** ini, MyNodoLL** fin){
+
+    MyNodoLL* ptr=cabeza->next;
+    MyNodoLL* medio=cabeza;
+    int i=0;
+    while(ptr!=nullptr){ //Moviendo el ptr para llegar hasta el final
+        ptr=ptr->next;
+        i++;
+        if(ptr!=nullptr){
+            medio=medio->next; //Recorremos el de en medio
+            ptr=ptr->next;
+        }
+    }
+
+    //Ya que sabemos que hemos llegado en medio vamos a proceder a redefinir el inicio y el fin
+    *ini= cabeza;
+    *fin= medio->next;
+    medio->next=nullptr;
+    //cout<<medio->data.getMensaje(); //"Rompemos por asi decir la lista o el vinculo de los medio"
+
+
+
+}
+void Bitacora::mergeSort(MyNodoLL** primero){
+
+    MyNodoLL* cabeza = *primero;
+    MyNodoLL* ini;
+    MyNodoLL* fin;
+    //Nuestro caso base cuando solo hay un elemento ya que hacemos llamadas recursivas
+        if((*primero==nullptr) || ((*primero)->next == nullptr)){
+            return;
+        }
+
+    //Aqui dividimos en dos la lista
+    Mezcla(cabeza,&ini,&fin);
+    mergeSort(&ini); //Hacemos nuestras llamadas recursivas
+    mergeSort(&fin);
+
+    (*primero)=mergeSort(ini,fin);
+
+    //this->nodosIpOrdenada.print();
+
+}
+
+MyNodoLL** Bitacora::getNodosIpOrdenada(){
+    return &nodosIpOrdenada.head;
+
+}
+
+void Bitacora::imprimirLista(){
+    nodosIpOrdenada.print();
+}
+
+void Bitacora::crearBitacoraOrdenada(){
+    ofstream Bitacora_Ordenada("bitacoraOrdenada2.3-eq8.txt");
+    MyNodoLL* actual=this->nodosIpOrdenada.head;
+    for (int a = 0; a < this->nodosIpOrdenada.length(); a++) {
+        Bitacora_Ordenada << actual->data.getMensaje() << endl;
+        actual=actual->next;
+    }
+    Bitacora_Ordenada.close();
+}
+
+void Bitacora::busquedaBitacora(){
+    string nombre, x, y, nom_archiv, respuesta;
+    x = "salida";
+    y = "-eq8.txt";
+    nombre = "archivo";
+    string contadorAString;
+    this->contador++;
+    contadorAString = to_string(this->contador);
+    nombre.append(contadorAString);
+    nom_archiv = x + contadorAString + y;
+
+    ofstream pov(nom_archiv);
+
+    string ipInicial;
+    string ipFinal;
+
+    cout<<"Ingresa tu ip inicial"<<endl;
+    cin>>ipInicial;
+    ipInicial.append(":0000");
+    cout<<endl;
+    cout<<"Ingresa tu ip final"<<endl;
+    cin>>ipFinal;
+    ipFinal.append(":0000");
+    cout<<endl;
+
+    MyNodoLL* actual=this->nodosIpOrdenada.head;
+
+    NodoRegistro nodoInicial("",ipInicial);
+    NodoRegistro nodoFinal("",ipFinal);
+
+    //Busqueda binaia
+    for (int i=0; i < this->nodosIpOrdenada.length(); i++) {
+        if(actual->data.compareTwoNodos(nodoInicial)){
+            while(!actual->data.compareTwoNodos(nodoFinal)){
+                pov << actual->data.getMensaje()<< endl;
+                actual=actual->next;
+
+            }
+            pov << actual->data.getMensaje()<< endl;
+            return;
+        }
+        actual=actual->next;
+
+    }
+    pov.close();
+    return;
+}

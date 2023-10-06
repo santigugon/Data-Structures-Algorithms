@@ -111,3 +111,32 @@ void NodoRegistro::createJerarquias(){
         this->puerto= newPuerto;
     }
 
+    bool NodoRegistro::compareTwoNodos(NodoRegistro &nodo2){
+
+            if(this->getJerarquia1()>nodo2.getJerarquia1()){
+                return true;
+            }else if(this->getJerarquia1()<nodo2.getJerarquia1()){
+                return false;
+            }else if(this->getJerarquia2()>nodo2.getJerarquia2()){
+                return true;
+            }else if(this->getJerarquia2()<nodo2.getJerarquia2()){
+                return false;
+            }else if(this->getJerarquia3()>nodo2.getJerarquia3()){
+                return true;
+            }else if(this->getJerarquia3()<nodo2.getJerarquia3()){
+                return false;
+            }else if(this->getJerarquia4()>nodo2.getJerarquia4()){
+                return true;
+            }else if(this->getJerarquia4()<nodo2.getJerarquia4()){
+                return false;
+            }
+            else if(this->getPuerto()>nodo2.getPuerto()){
+                return true;
+            }else if(this->getPuerto()<nodo2.getPuerto()){
+                return false;
+            }else if(this->getPuerto()==nodo2.getPuerto()){
+                return true;
+            }
+
+
+    }
