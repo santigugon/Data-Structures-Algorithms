@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1696551992 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\main.cpp
+1696565860 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\main.cpp
 	<iostream>
 	<vector>
 	<string>
@@ -21,7 +21,7 @@
 1696548150 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\nodoregistro.cpp
 	"NodoRegistro.h"
 
-1696551472 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.cpp
+1696565698 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.cpp
 	"Bitacora.h"
 	<unordered_map>
 

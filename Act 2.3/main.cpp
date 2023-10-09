@@ -5,20 +5,20 @@
 #include <fstream>
 
 int main() {
-    cout<<"Hola mundo"<<endl;
     string respuesta="Y";
     Bitacora bitacora;
 
     bitacora.mergeSort(bitacora.getNodosIpOrdenada());
+
     bitacora.crearBitacoraOrdenada();
 
 
-    while(respuesta=="Y" ||respuesta=="y"){
+while(respuesta=="Y" ||respuesta=="y"){
 
     bitacora.busquedaBitacora();
     cout<<"Deseas realizar otra busqueda? Y/N"<<endl;
     cin>>respuesta;
-    }
+}
 
     return 0;
 }

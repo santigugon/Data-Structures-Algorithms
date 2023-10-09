@@ -5,7 +5,7 @@ using namespace std;
 
 
 Bitacora::Bitacora(){
-    cout<<"Hola mundo"<<endl;
+
     ifstream archivo;
       //El mapa para representar los meses con su numero
     unordered_map<string, int>meses;
@@ -185,15 +185,16 @@ void Bitacora::busquedaBitacora(){
     NodoRegistro nodoInicial("",ipInicial);
     NodoRegistro nodoFinal("",ipFinal);
 
-    //Busqueda binaia
+    //Busqueda secuencial
     for (int i=0; i < this->nodosIpOrdenada.length(); i++) {
         if(actual->data.compareTwoNodos(nodoInicial)){
             while(!actual->data.compareTwoNodos(nodoFinal)){
-                pov << actual->data.getMensaje()<< endl;
+                string mensaje=actual->data.getMensaje();
+                pov << actual-><< endl;
                 actual=actual->next;
 
             }
-            pov << actual->data.getMensaje()<< endl;
+            pov << actual->data.getMensaje();
             return;
         }
         actual=actual->next;
