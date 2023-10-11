@@ -488,4 +488,3 @@ Aug 15 15:40:51 679.34.96.62:4232 Failed password for admin
 Sep 8 20:47:49 679.34.605.90:6790 Failed password for illegal user test
 Aug 30 19:08:50 679.44.720.11:6818 Failed password for illegal user test
 Sep 15 10:33:41 679.49.883.89:6498 Illegal user
-Sep 6 03:55:42 679.51.274.19:5851 Failed password for admin

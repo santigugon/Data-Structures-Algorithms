@@ -1,3 +1,10 @@
+//A00572499 Santiago Gutierrez Gonzalez y A01281202 Cesar Mecinas Estrada
+//Act 2.3 - Algoritmos de Busqueda y Ordenamiento
+//10/10/2023
+
+//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y posteriormente permite la busqueda en un rango de Ips dando la ip inicial y final
+
+
 #include "MyLinkedList.h"
 #include <iostream>
 using namespace std;
@@ -151,18 +158,6 @@ void MyLinkedList::removeAt(int pos){
     }
 }
 
-/*
-//Complejidad de tipo lineal O(n)
-std::ostream& operator << (std::ostream& o, const MyLinkedList& list)
-{
-    MyNodoLL* actual=list.head;
-    for(int i=0;i<list.length();i++){
-        o<<actual->data.getMensaje()<<",";
-        actual=actual->next;
-    }
-    return o;
-}
-*/
 
 //Complejidad de tipo lineal O(n)
 NodoRegistro MyLinkedList::getAt(int pos){
@@ -197,6 +192,7 @@ void MyLinkedList::setAt(int pos, NodoRegistro data){
     }
 }
 
+//Complejidad de tipo lineal O(n)
 void MyLinkedList::print(){
     MyNodoLL* actual=this->head;
     for(int i=0;i<this->length();i++){

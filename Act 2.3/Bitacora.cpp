@@ -1,9 +1,16 @@
+//A00572499 Santiago Gutierrez Gonzalez y A01281202 Cesar Mecinas Estrada
+//Act 2.3 - Algoritmos de Busqueda y Ordenamiento
+//10/10/2023
+
+//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y posteriormente permite la busqueda en un rango de Ips dando la ip inicial y final
+
+
 #include "Bitacora.h"
 #include <unordered_map>
 
 using namespace std;
 
-
+//Complejidad O(m) m=numero de palabras
 Bitacora::Bitacora(){
 
     ifstream archivo;
@@ -45,6 +52,14 @@ Bitacora::Bitacora(){
             else { //Cuando la palabra si es un mes mandamos el renglon al vector de renglones y comenzamos uno nuevo
                 if (i != 0 && renglon !="") {
                     //renglones.push_back(renglon);
+
+                    size_t lastNonSpace = renglon.find_last_not_of(" \t");
+
+                    if (lastNonSpace != std::string::npos) {
+                            // Borramos los espacios del final
+                            renglon.erase(lastNonSpace + 1);
+                    }
+
                     NodoRegistro nuevoNodoRegistro(renglon,ip);
                     MyNodoLL* nuevoNodo = new MyNodoLL(nuevoNodoRegistro);
 
@@ -71,6 +86,7 @@ Bitacora::Bitacora(){
    //this->nodosIpOrdenada.print();
 }
 
+//mergeSort-complejidad de orden Lineal O(n)
 MyNodoLL* Bitacora::mergeSort(MyNodoLL* lista1, MyNodoLL* lista2){
     MyNodoLL* nodoFinal = nullptr;
 
@@ -92,6 +108,7 @@ MyNodoLL* Bitacora::mergeSort(MyNodoLL* lista1, MyNodoLL* lista2){
 
 
 }
+//mezcla-complejidad de orden Lineal O(n)
 void Mezcla(MyNodoLL* cabeza, MyNodoLL** ini, MyNodoLL** fin){
 
     MyNodoLL* ptr=cabeza->next;
@@ -115,6 +132,8 @@ void Mezcla(MyNodoLL* cabeza, MyNodoLL** ini, MyNodoLL** fin){
 
 
 }
+
+//mergeSort-complejidad de orden Lineal O(n log(n))
 void Bitacora::mergeSort(MyNodoLL** primero){
 
     MyNodoLL* cabeza = *primero;
@@ -136,25 +155,32 @@ void Bitacora::mergeSort(MyNodoLL** primero){
 
 }
 
+//Complejidad de orden constante O(1)
 MyNodoLL** Bitacora::getNodosIpOrdenada(){
     return &nodosIpOrdenada.head;
 
 }
-
+//Complejidad de orden lineal O(n)
 void Bitacora::imprimirLista(){
-    nodosIpOrdenada.print();
+    this->nodosIpOrdenada.print();
 }
 
+//Complejidad de orden lineal O(n)
 void Bitacora::crearBitacoraOrdenada(){
-    ofstream Bitacora_Ordenada("bitacoraOrdenada2.3-eq8.txt");
+    ofstream Bitacora_Ordenada("bitacoraOrdenadaIP-Eq8.txt");
     MyNodoLL* actual=this->nodosIpOrdenada.head;
     for (int a = 0; a < this->nodosIpOrdenada.length(); a++) {
-        Bitacora_Ordenada << actual->data.getMensaje() << endl;
+        if(a<this->nodosIpOrdenada.length()-1){
+            Bitacora_Ordenada << actual->data.getMensaje() << endl;
+        }else{
+            Bitacora_Ordenada << actual->data.getMensaje();
+        }
         actual=actual->next;
     }
     Bitacora_Ordenada.close();
 }
 
+//Complejidad de orden lineal O(n)
 void Bitacora::busquedaBitacora(){
     string nombre, x, y, nom_archiv, respuesta;
     x = "salida";
@@ -190,11 +216,26 @@ void Bitacora::busquedaBitacora(){
         if(actual->data.compareTwoNodos(nodoInicial)){
             while(!actual->data.compareTwoNodos(nodoFinal)){
                 string mensaje=actual->data.getMensaje();
-                pov << actual-><< endl;
-                actual=actual->next;
-
+                if(actual->next!=nullptr){
+                    pov << actual->data.getMensaje();
+                    if(!actual->next->data.compareTwoNodos(nodoFinal)){
+                        pov<<endl;
+                    }
+                    actual=actual->next;
+                }else{
+                    break;
+                }
             }
-            pov << actual->data.getMensaje();
+            if(actual->data.isNodoEqual(nodoFinal)){
+                if(!nodoInicial.isNodoEqual(nodoFinal)){
+                    pov <<endl<< actual->data.getMensaje();
+                }else{
+                    pov<< actual->data.getMensaje();
+                }
+            }
+            else if(!this->nodosIpOrdenada.tail->data.compareTwoNodos(nodoFinal)&&actual->next==nullptr){
+                pov<< actual->data.getMensaje();
+            }
             return;
         }
         actual=actual->next;

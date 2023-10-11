@@ -1,3 +1,10 @@
+//A00572499 Santiago Gutierrez Gonzalez y A01281202 Cesar Mecinas Estrada
+//Act 2.3 - Algoritmos de Busqueda y Ordenamiento
+//10/10/2023
+
+//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y posteriormente permite la busqueda en un rango de Ips dando la ip inicial y final
+
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -6,26 +13,23 @@
 
 int main() {
     string respuesta="Y";
+    //Creamos la bitacora que toma ya el archivo por default
     Bitacora bitacora;
 
+    //Ordenamos la lista ligada
     bitacora.mergeSort(bitacora.getNodosIpOrdenada());
 
+    //Creamos el archivo con la bitacora ordenadas
     bitacora.crearBitacoraOrdenada();
 
+    //Generamos un while para las preguntas que manda llamar la busqueda
+    while(respuesta=="Y" ||respuesta=="y"){
 
-while(respuesta=="Y" ||respuesta=="y"){
-
-    bitacora.busquedaBitacora();
-    cout<<"Deseas realizar otra busqueda? Y/N"<<endl;
-    cin>>respuesta;
-}
+        bitacora.busquedaBitacora();
+        cout<<"Deseas realizar otra busqueda? Y/N"<<endl;
+        cin>>respuesta;
+    }
 
     return 0;
 }
-//650.44.964.36:6943
-//679.51.274.19:5851
 
-//95.83.314.79:6429
-//101.80.401.84:5919
-
-//ESPACIOS AL FINAL DEL DOCUMENTO
