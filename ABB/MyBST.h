@@ -40,7 +40,8 @@ class MyBST{
         void postorder();
         void level();
         void visit(int type);//Type: 1->preorder,2->inorder.3->postorder,4->level
-        int height();//regresa la altura del BST.
+        int height(MyNodeBST*);//regresa la altura del BST.
+        int height();
         void ancestors(int data);//imprime los ancestros del valor pasado.
                                  //el orden de impresión debe ser de la raíz
                                  //hacía abajo.

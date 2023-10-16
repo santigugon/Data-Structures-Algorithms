@@ -9,6 +9,7 @@ int main()
     MyLinkedList lista;
     //lista.first();
     //lista.removeFirst();
+  //  lista.removeLast();
     lista.insertFirst(1);
  cout<<"LENGHT "<<lista.length()<<endl;
     cout<<"Head"<<lista.head->data<<endl;
@@ -56,8 +57,12 @@ cout<<"LENGHT "<<lista.length()<<endl;
     lista.insertAt(4,10); //REVISAR CUANDO ES EL PRIMERO
     lista.setAt(3,6);
     //std::cout<<"En la posicion 3 tenemos="<<lista.getAt(3)<<std::endl;
-    //lista.removeAt(3);
-    cout<<lista;
+    // cout<<lista;
+    //cout<<lista;
+    //cout<<endl;
+    lista.removeLast();
+    cout<<lista<<endl;
+    //cout<<lista;
 
     return 0;
 }
