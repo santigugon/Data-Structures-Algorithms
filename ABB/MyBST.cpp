@@ -92,7 +92,7 @@ void MyBST::preorder(MyNodeBST* current){
     if(current==nullptr){
         return;
     }else{
-        cout<<current->data<<endl;
+        cout<<current->data<<", ";
         preorder(current->left);
         preorder(current->right);
 
@@ -114,7 +114,7 @@ void MyBST::inorder(MyNodeBST* current){
         return;
     }else{
         inorder(current->left);
-        cout<<current->data<<endl;
+        cout<<current->data<<", ";
         inorder(current->right);
 
     }
@@ -135,7 +135,7 @@ void MyBST::postorder(MyNodeBST* current){
     }else{
         postorder(current->left);
         postorder(current->right);
-        cout<<current->data<<endl;
+        cout<<current->data<<", ";
 
     }
 
@@ -152,7 +152,7 @@ void MyBST::postorder(){
 
 void MyBST::level() {
     if (this->root == nullptr) {
-        cout << "The tree is empty. Nothing to print." << endl;
+        cout << "El arbol esta vacio no hay nada a imprimir" << endl;
         return;
     }
 
@@ -163,7 +163,7 @@ void MyBST::level() {
         MyNodeBST* current = nodeQueue.front();
         nodeQueue.pop();
 
-        cout << current->data << " ";
+        cout << current->data << ", ";
 
         if (current->left != nullptr) {
             nodeQueue.push(current->left);
@@ -179,10 +179,13 @@ void MyBST::visit(int orden){
     if(orden>0 && orden<5){
         if(orden==1){
             this->preorder();
+            cout<<endl;
         }else if(orden==2){
             this->inorder();
+            cout<<endl;
         }else if(orden==3){
             this->postorder();
+            cout<<endl;
         }else if(orden==4){
             this->level();
         }
@@ -239,31 +242,27 @@ int MyBST::whatLevelAmI(int data){
                 level++;
             }else{
                 return level;
-
+                break;
             }
-
-
         }
         return -1;
     }
-
 }
 
 int MyBST::height(MyNodeBST* actual){
 
-if(actual==nullptr){
-    return 1;
-}
+    if(actual==nullptr){
+        return 0;
+    }
 
-int izq=height(actual->left);
-int der=height(actual->right);
+    int izq=height(actual->left);
+    int der=height(actual->right);
 
-if(der>izq){
-    return der++;
-}else{
-    return izq++;
-}
-
+    if(der>izq){
+        return der+1;
+    }else{
+        return izq+1;
+    }
 }
 
 int MyBST::height(){

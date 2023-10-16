@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1697420622 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\abb\main.cpp
+1697425550 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\abb\main.cpp
 	"MyBST.h"
 	<iostream>
 
 1697420433 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\abb\mybst.h
 
-1697401513 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\abb\mybst.cpp
+1697425259 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\abb\mybst.cpp
 	<iostream>
 	"MyBST.h"
 	<queue>
