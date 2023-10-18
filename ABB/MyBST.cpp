@@ -48,7 +48,6 @@ bool MyBST::insert(int data){
                 actual=actual->right;
             }
         }else{
-            cout<<"Los elementos son iguales y no se pudo insertar"<<endl;
             return false;
         }
 
@@ -92,7 +91,7 @@ void MyBST::preorder(MyNodeBST* current){
     if(current==nullptr){
         return;
     }else{
-        cout<<current->data<<", ";
+        cout<<current->data<<",";
         preorder(current->left);
         preorder(current->right);
 
@@ -101,9 +100,7 @@ void MyBST::preorder(MyNodeBST* current){
 }
 
 void MyBST::preorder(){
-     if(this->size==0){
-        cout<<"El arbol esta vacio no hay nada a imprimir"<<endl;
-    }else{
+     if(this->size!=0){
         preorder(this->root);
     }
 
@@ -114,7 +111,7 @@ void MyBST::inorder(MyNodeBST* current){
         return;
     }else{
         inorder(current->left);
-        cout<<current->data<<", ";
+        cout<<current->data<<",";
         inorder(current->right);
 
     }
@@ -122,9 +119,7 @@ void MyBST::inorder(MyNodeBST* current){
 }
 
 void MyBST::inorder(){
-     if(this->size==0){
-        cout<<"El arbol esta vacio no hay nada a imprimir"<<endl;
-    }else{
+     if(this->size!=0){
         inorder(this->root);
     }
 }
@@ -135,16 +130,14 @@ void MyBST::postorder(MyNodeBST* current){
     }else{
         postorder(current->left);
         postorder(current->right);
-        cout<<current->data<<", ";
+        cout<<current->data<<",";
 
     }
 
 }
 
 void MyBST::postorder(){
-    if(this->size==0){
-        cout<<"El arbol esta vacio no hay nada a imprimir"<<endl;
-    }else{
+    if(this->size!=0){
         postorder(this->root);
     }
 }
@@ -152,8 +145,7 @@ void MyBST::postorder(){
 
 void MyBST::level() {
     if (this->root == nullptr) {
-        cout << "El arbol esta vacio no hay nada a imprimir" << endl;
-        return;
+       return;
     }
 
     queue<MyNodeBST*> nodeQueue;
@@ -163,7 +155,7 @@ void MyBST::level() {
         MyNodeBST* current = nodeQueue.front();
         nodeQueue.pop();
 
-        cout << current->data << ", ";
+        cout << current->data << ",";
 
         if (current->left != nullptr) {
             nodeQueue.push(current->left);
@@ -172,7 +164,7 @@ void MyBST::level() {
             nodeQueue.push(current->right);
         }
     }
-    cout << endl;
+
 }
 
 void MyBST::visit(int orden){
@@ -188,6 +180,7 @@ void MyBST::visit(int orden){
             cout<<endl;
         }else if(orden==4){
             this->level();
+            cout << endl;
         }
     }else{
         cout<<"Ese orden no esta disponible debe encontrarse en un rango de 1 a 4"<<endl;
@@ -197,9 +190,10 @@ void MyBST::visit(int orden){
 
 void MyBST::ancestors(int data){
     vector<int> ancestros;
-    if(this->root->data==data){
-        cout<<"El elemento no tiene ancestros por que es la raiz"<<endl;
-    }else{
+    if(this->root==nullptr){
+        return;
+    }
+    else if(this->root->data!=data){
         MyNodeBST* actual= this->root;
         while(actual!=nullptr){
             if(actual->data!=data){
@@ -210,8 +204,8 @@ void MyBST::ancestors(int data){
                     actual=actual->left;
                 }
             }else{
-                for(int i=ancestros.size()-1;i>=0;i--){
-                    cout<<ancestros[i]<<", ";
+                for(int i=0;i<ancestros.size();i++){
+                    cout<<ancestros[i]<<",";
                 }
                 return;
 
@@ -219,7 +213,6 @@ void MyBST::ancestors(int data){
 
 
         }
-        cout<<"No se encontro el dato en el arbol"<<endl;
         return;
     }
 
@@ -228,7 +221,10 @@ void MyBST::ancestors(int data){
 
 int MyBST::whatLevelAmI(int data){
     int level =0;
-    if(this->root->data==data){
+    if(this->root==nullptr){
+        return -1;
+    }
+    else if(this->root->data==data){
         return level;
     }else{
         MyNodeBST* actual= this->root;
@@ -268,55 +264,51 @@ int MyBST::height(MyNodeBST* actual){
 int MyBST::height(){
     return height(this->root);
 }
-/*
-bool MyBST::remove(int data) {
-    return remove(this->root, data);
-}
 
-MyNodeBST* MyBST::remove(MyNodeBST* root, int data) {
-    if (root == nullptr) {
-        // The value is not in the tree
-        return root;
+MyNodeBST* MyBST::replace(MyNodeBST* actual) {
+    MyNodeBST* a, * b;
+    b = nullptr;
+    a = actual->left;
+    while (a->right != nullptr) {
+        b = a;
+        a = a->right;
     }
-
-    if (data < root->data) {
-        // The value to be removed is in the left subtree
-        root->left = remove(root->left, data);
-    } else if (data > root->data) {
-        // The value to be removed is in the right subtree
-        root->right = remove(root->right, data);
+    actual->data = a->data;
+    if (b == nullptr) {
+        actual->left = a->left;
     } else {
-        // Node with the data to be removed is found
+        b->right = a->left;
+    }
+    return a;
+}
 
-        // Node with only one child or no child
-        if (root->left == nullptr) {
-            MyNodeBST* temp = root->right;
-            delete root;
-            return temp;
-        } else if (root->right == nullptr) {
-            MyNodeBST* temp = root->left;
-            delete root;
-            return temp;
+MyNodeBST* MyBST::removeRecursive(MyNodeBST* actual, int data, bool& removed) {
+    if (actual == nullptr) {
+        removed=false;
+        return actual;  // Return null
+    } else if (data < actual->data) {
+        actual->left = removeRecursive(actual->left, data,removed);
+    } else if (data > actual->data) {
+        actual->right = removeRecursive(actual->right, data,removed);
+    } else {
+        MyNodeBST* rNode = actual;
+        if (rNode->left == nullptr) {
+            actual = rNode->right;
+        } else if (rNode->right == nullptr) {
+            actual = rNode->left;
+        } else {
+            rNode = replace(rNode);
         }
-
-        // Node with two children, get the in-order successor (smallest in the right subtree)
-        MyNodeBST* temp = minValueNode(root->right);
-
-        // Copy the in-order successor's data to this node
-        root->data = temp->data;
-
-        // Delete the in-order successor
-        root->right = remove(root->right, temp->data);
+        removed=true;
+        this->size--;
+        delete rNode;
     }
-
-    return root;
+    return actual;  // Return the modified node
 }
 
-MyNodeBST* MyBST::minValueNode(MyNodeBST* node) {
-    MyNodeBST* current = node;
-    while (current->left != nullptr) {
-        current = current->left;
-    }
-    return current;
+
+bool MyBST::remove(int data){
+    bool removed=false;
+    this->root=removeRecursive(this->root,data,removed);
+    return removed;
 }
-*/

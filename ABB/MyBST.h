@@ -20,6 +20,8 @@ class MyBST{
         void preorder(MyNodeBST* current);
         void inorder(MyNodeBST* current);
         void postorder(MyNodeBST* current);
+        MyNodeBST* replace(MyNodeBST *actual);
+        MyNodeBST* removeRecursive(MyNodeBST* act, int data, bool& removed);
         //En caso de hacer alguno de los métodos recursivos y necesiten
         //otro método que haga la recursión deben de colocarlo como privado
         //sólo la función de preparación sería pública
