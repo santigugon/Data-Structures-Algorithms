@@ -21,6 +21,8 @@ class MyBST{
     private:
         MyNodeBST* replace(MyNodeBST *actual);
         MyNodeBST* removeRecursive(MyNodeBST* act, int data, bool& removed);
+        int height(MyNodeBST*);
+        bool searchRec(int data,MyNodeBST*);
     public:
         int size;
         MyNodeBST* root;
@@ -35,7 +37,6 @@ class MyBST{
         bool isEmpty();
         bool search(int data);
         bool searchRec(int data);
-        bool searchRec(int data,MyNodeBST*);
         bool insert(int data);
         bool remove(int data);
         void preorder();
@@ -43,7 +44,6 @@ class MyBST{
         void postorder();
         void level();
         void visit(int type);
-        int height(MyNodeBST*);
         int height();
         void ancestors(int data);
         int whatLevelAmI(int data);
