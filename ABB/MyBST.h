@@ -1,3 +1,9 @@
+//SANTIAGO GUTIERREZ GONZALEZ
+//MATRICULA:A00572499
+//ACT 3.1-Operaciones avanzadas en un BST
+//Descripcion- Programa que implementa la estructura de datos de una arbol binario de busqueda haciendo uso del struct MyNodeBST e implementando su metodos
+//Fecha: 18/10/2023
+
 #ifndef MYBST_H_INCLUDED
 #define MYBST_H_INCLUDED
 struct MyNodeBST{
@@ -12,7 +18,9 @@ struct MyNodeBST{
 
 
 class MyBST{
-   // private:
+    private:
+        MyNodeBST* replace(MyNodeBST *actual);
+        MyNodeBST* removeRecursive(MyNodeBST* act, int data, bool& removed);
     public:
         int size;
         MyNodeBST* root;
@@ -20,11 +28,7 @@ class MyBST{
         void preorder(MyNodeBST* current);
         void inorder(MyNodeBST* current);
         void postorder(MyNodeBST* current);
-        MyNodeBST* replace(MyNodeBST *actual);
-        MyNodeBST* removeRecursive(MyNodeBST* act, int data, bool& removed);
-        //En caso de hacer alguno de los métodos recursivos y necesiten
-        //otro método que haga la recursión deben de colocarlo como privado
-        //sólo la función de preparación sería pública
+
     //public:
         MyBST();
         int length();
@@ -32,24 +36,16 @@ class MyBST{
         bool search(int data);
         bool searchRec(int data);
         bool searchRec(int data,MyNodeBST*);
-        bool insert(int data);//true si lo inserto o no
-        bool remove(int data);//si el valor estaba en el árbol lo borra
-                              //y regresa true, caso contrario sólo regresa false
-        //Estudiar borrado en BST
-        //Estudiar AVL
+        bool insert(int data);
         void preorder();
         void inorder();
         void postorder();
         void level();
-        void visit(int type);//Type: 1->preorder,2->inorder.3->postorder,4->level
-        int height(MyNodeBST*);//regresa la altura del BST.
+        void visit(int type);
+        int height(MyNodeBST*);
         int height();
-        void ancestors(int data);//imprime los ancestros del valor pasado.
-                                 //el orden de impresión debe ser de la raíz
-                                 //hacía abajo.
-                                //Si valor no se localiza en el árbol no imprime nada
-        int whatLevelAmI(int data);//regresa el nivel en que se encuentra el valor
-                                   //dentro del árbol. Si el valor no está en árbol imprime -1
+        void ancestors(int data);
+        int whatLevelAmI(int data);
 };
 
 #endif // MYBST_H_INCLUDED

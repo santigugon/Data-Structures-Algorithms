@@ -7,6 +7,28 @@ int main()
 {
 
     MyBST arbolBin;
+    arbolBin.remove(25);
+    arbolBin.visit(4);
+    arbolBin.insert(21);
+    arbolBin.visit(4);
+     arbolBin.remove(21);
+    arbolBin.visit(4);
+
+    arbolBin.insert(13);
+    arbolBin.insert(33);
+    arbolBin.insert(10);
+    arbolBin.insert(18);
+    arbolBin.insert(25);
+    arbolBin.insert(40);
+    //arbolBin.insert(29);
+    //arbolBin.insert(27);
+    //arbolBin.insert(30);
+    //arbolBin.ancestors(29);
+    cout<<endl;
+    arbolBin.remove(21);
+    arbolBin.visit(4);
+    arbolBin.ancestors(29);
+    /*
     //ARBOL VACIO
     cout<<endl<<"ARBOL VACIO"<<endl;
     cout<<"Visita arbol vacio"<<endl;
@@ -22,7 +44,7 @@ int main()
     cout<<"Ancestros del numero "<<45<<endl;
     arbolBin.ancestors(45);
     cout<<endl;
-    */
+
     if(arbolBin.remove(15)){
         cout<<"elemento removido"<<endl;
     }else{
@@ -80,6 +102,7 @@ int main()
         cout<<"No se encontro el elemento"<<endl;
     }
     cout<<"Tamaño "<<arbolBin.size<<endl;
+
     /*
     arbolBin.visit(1);
     arbolBin.visit(2);
