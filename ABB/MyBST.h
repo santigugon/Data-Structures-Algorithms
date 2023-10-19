@@ -37,6 +37,7 @@ class MyBST{
         bool searchRec(int data);
         bool searchRec(int data,MyNodeBST*);
         bool insert(int data);
+        bool remove(int data);
         void preorder();
         void inorder();
         void postorder();

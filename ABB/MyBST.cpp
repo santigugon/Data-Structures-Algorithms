@@ -10,7 +10,9 @@
 #include <vector>
 
 using namespace std;
-//Anotacion h= altura de un arbol, en caso de ser un BST balanceado h suele ser igual a O(log n)
+//Anotacion Complejidades: h= altura de un arbol, en caso de ser un BST balanceado h suele ser igual a O(log n)
+//Entonces cuando hablamos de complejidad O(h) quiere decir que en arboles balanceados  ~= O(log n)
+//Peor caso: Cuando el arbol esta completamente desbalanceado
 
 //Complejidad de tipo constante O(1)
 MyBST::MyBST(){
@@ -29,7 +31,7 @@ bool MyBST::isEmpty(){
 }
 
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 bool MyBST::insert(int data){
    MyNodeBST* actual= this->root;
    bool insertado=false;
@@ -69,7 +71,7 @@ bool MyBST::insert(int data){
 }
 
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 bool MyBST::search(int data){
     MyNodeBST* actual= this->root;
     while(actual!=nullptr){
@@ -87,7 +89,7 @@ bool MyBST::search(int data){
 }
 
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 bool MyBST::searchRec(int data, MyNodeBST* actual){
     if(actual==nullptr){
         return false; //Caso base no encontrado
@@ -104,7 +106,7 @@ bool MyBST::searchRec(int data, MyNodeBST* actual){
 }
 
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 bool MyBST::searchRec(int data){
     return searchRec(data, this->root);
 }
@@ -216,7 +218,7 @@ void MyBST::visit(int orden){
 }
 
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 void MyBST::ancestors(int data){
     vector<int> ancestros;
     if(this->root==nullptr){
@@ -245,7 +247,7 @@ void MyBST::ancestors(int data){
     }
 }
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 int MyBST::whatLevelAmI(int data){
     int level =0;
     if(this->root==nullptr){
@@ -311,7 +313,7 @@ MyNodeBST* MyBST::replace(MyNodeBST* actual) {
 }
 
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 MyNodeBST* MyBST::removeRecursive(MyNodeBST* actual, int data, bool& removed) {
     if (actual == nullptr) {
         removed=false;
@@ -342,7 +344,7 @@ MyNodeBST* MyBST::removeRecursive(MyNodeBST* actual, int data, bool& removed) {
 }
 
 //Peor caso: Complejidad de tipo Lineal O(n)
-//Caso medio: Complejidad de tipo Lineal O(h) h=altura del arbol
+//Caso medio: Complejidad  O(h)|| h= altura de un arbol
 bool MyBST::remove(int data){
     bool removed=false;
     this->root=removeRecursive(this->root,data,removed);
