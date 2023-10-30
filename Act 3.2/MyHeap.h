@@ -4,29 +4,23 @@ class   MyHeap{
     private:
         int* values; //Arreglo donde se van a guardar los valores del HEAP
         int size;    //Representa cuantos valores tiene almacenado el Heap
-       int len;    //Representa el tamaño o capacidad máxima actual del arreglo
+       int len;    //Representa el tamaï¿½o o capacidad mï¿½xima actual del arreglo
     public:
-        MyHeap();//Inicializa el los atributos. El atributo values lo inicializa como un arreglo vacío tamaño de 7.
-        MyHeap(int* valores,int size); //Conviert el arreglo en un heap. Lo deja del mismo tamaño que tiene el arreglo
-        void push(int n); //Inserta un valor en el heap. Sólo cuando el nuevo valor no cabe en el arreglo
-                          //crece el arreglo al tamaño 2*n+1. (Expansión din+amica del arreglo)
+        MyHeap();//Inicializa el los atributos. El atributo values lo inicializa como un arreglo vacï¿½o tamaï¿½o de 7.
+        MyHeap(int* valores,int size); //Convierte el arreglo en un heap. Lo deja del mismo tamaï¿½o que tiene el arreglo
+        void push(int n); //Inserta un valor en el heap. Sï¿½lo cuando el nuevo valor no cabe en el arreglo
+                          //crece el arreglo al tamaï¿½o 2*n+1. (Expansiï¿½n din+amica del arreglo)
                           //Es decir si se tiene el arreglo ya con 7 valores y se quiere insertar otro valor(El 8vo)
-                          //entonces el arreglo se crece a tamaño 15, se copian los primeros 7 valores del arreglo original
+                          //entonces el arreglo se crece a tamaï¿½o 15, se copian los primeros 7 valores del arreglo original
                           //y se inserta el 8vo valor.
-        void pop();//Se elimina un valor del heap. No es necesario nunca decrementar el tamaño del arreglo.
+        void pop();//Se elimina un valor del heap. No es necesario nunca decrementar el tamaï¿½o del arreglo.
         int top();//regresa quien es el siguiente elemento en salir pero sin borrarlo
-        bool isEmpty();//regresa true si el heap está vacío caso contrario regresa false
-        int length();//regresa cuántos elementos están almacenando el heap. OJO: NO EL TAMAÑO
+        bool isEmpty();//regresa true si el heap estï¿½ vacï¿½o caso contrario regresa false
+        int length();//regresa cuï¿½ntos elementos estï¿½n almacenando el heap. OJO: NO EL TAMAï¿½O
         void imprimir();
+        void heap(int indice);
+        void swap(int a, int b);
 
-         /*Pone en el .h sólo la declaración del método y en el cpp esta definición
-         void MyHeap::imprimir(){
-              cout<<"arbol size: "<<this->size<<" len:"<<this->len<<endl;
-              for(int i=0; i<this->size; i++){
-                    cout<<values[i]<<",";
-               }
-               cout<<endl;
-         }*/
    };
 
 
