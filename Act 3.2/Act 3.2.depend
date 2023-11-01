@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1698693912 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.2\main.cpp
+1698809600 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.2\main.cpp
 	<iostream>
 	"MyHeap.h"
+	<cassert>
 
-1698680641 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.2\myheap.h
+1698810990 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.2\myheap.h
 
-1698693920 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.2\myheap.cpp
+1698813402 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.2\myheap.cpp
 	<iostream>
 	"MyHeap.h"
 

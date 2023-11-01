@@ -31,7 +31,7 @@ Bitacora::Bitacora(){
 
     this->nodosIpOrdenada; //Creamos la lista ligada vacia
 
-    archivo.open("bitacora.txt");
+    archivo.open("bitacora2.txt");
 
     if (archivo.is_open()) { //Siempre se verifica que el archivo este abierto
         string renglon = "";
@@ -167,7 +167,7 @@ void Bitacora::imprimirLista(){
 
 //Complejidad de orden lineal O(n)
 void Bitacora::crearBitacoraOrdenada(){
-    ofstream Bitacora_Ordenada("bitacoraOrdenadaIP-Eq8.txt");
+    ofstream Bitacora_Ordenada("bitacoraOrdenada2IP-Eq8.txt");
     MyNodoLL* actual=this->nodosIpOrdenada.head;
     for (int a = 0; a < this->nodosIpOrdenada.length(); a++) {
         if(a<this->nodosIpOrdenada.length()-1){
