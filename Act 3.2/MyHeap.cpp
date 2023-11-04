@@ -10,9 +10,9 @@ using namespace std;
 
 //Complejidad de tipo constante O(1) en todo caso
 MyHeap::MyHeap(){
-this->values=new int[7];
-this->size=0;
-this->len=7;
+    this->values=new int[7];
+    this->size=0;
+    this->len=7;
 }
 
 //, Complejidad de tipo logaritmica O(log n) (Peor caso),  complejidad de tipo constante O(1) (Mejor caso) donde no hay que reacomodar los nodos por lo que no hacemos llamada recursiva

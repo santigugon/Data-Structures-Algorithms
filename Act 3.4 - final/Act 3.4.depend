@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1696989149 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\main.cpp
+	<iostream>
+	<vector>
+	<string>
+	"Bitacora.h"
+	<fstream>
+
+1696989124 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.cpp
+	"MyLinkedList.h"
+	<iostream>
+
+1696989962 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.h
+	"NodoRegistro.h"
+
+1696989132 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\nodoregistro.h
+	<iostream>
+	<string>
+	<vector>
+
+1696989128 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\nodoregistro.cpp
+	"NodoRegistro.h"
+
+1696959621 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.cpp
+	"Bitacora.h"
+	<unordered_map>
+
+1696989104 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.h
+	"MyLinkedList.h"
+	"NodoRegistro.h"
+	<fstream>
+
+1699039114 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\bitacora.cpp
+	"Bitacora.h"
+	<unordered_map>
+
+1699035385 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\bitacora.h
+	"MyLinkedList.h"
+	"NodoRegistro.h"
+	"MyBST.h"
+	<fstream>
+
+1696989962 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\mylinkedlist.h
+	"NodoRegistro.h"
+
+1696989132 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\nodoregistro.h
+	<iostream>
+	<string>
+	<vector>
+
+1699054424 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\main.cpp
+	<iostream>
+	<vector>
+	<string>
+	"Bitacora.h"
+	<fstream>
+	"NodoIP.h"
+
+1696989124 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\mylinkedlist.cpp
+	"MyLinkedList.h"
+	<iostream>
+
+1696989128 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\nodoregistro.cpp
+	"NodoRegistro.h"
+
+1699039188 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\mybst.cpp
+	<iostream>
+	"MyBST.h"
+	<queue>
+	<vector>
+
+1699039094 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\mybst.h
+	"NodoIP.h"
+
+1699029562 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\nodoip.h
+	<iostream>
+
+1699029572 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 3.4 - final\nodoip.cpp
+	"NodoIP.h"
+

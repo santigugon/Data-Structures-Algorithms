@@ -111,6 +111,7 @@ int main()
     cout << "Top element: " << emptyHeap.top() << endl;
     cout << "Pop element: ";
     emptyHeap.pop();
+    emptyHeap.push(1);
     emptyHeap.imprimir();
     cout << endl;
 
