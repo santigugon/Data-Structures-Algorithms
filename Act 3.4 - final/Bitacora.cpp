@@ -268,6 +268,7 @@ void Bitacora::crearArbolNodos(){
     meses["Oct"] = 10;
     meses["Nov"] = 11;
     meses["Dec"] = 12;
+    meses["﻿Oct"]=13;
 
 
     this->crearBitacoraOrdenada();
@@ -289,6 +290,7 @@ void Bitacora::crearArbolNodos(){
 
             if (meses[palabra] < 1) { //en caso de que la palabra no sea un mes hacemos lo siguiente
                 if (i == 3) { //En la iteracion donde se encuentra la hora con min y seg usamos substr para obtener el numero
+
                     lastIp=ipSinPuerto;
                     ipSinPuerto="";
                     ip=palabra;
@@ -306,8 +308,16 @@ void Bitacora::crearArbolNodos(){
                     else{
                         contadorIp++;
                     }
+                    /*if(ipSinPuerto=="10.15.175.231"){
+                        cout<<ip<<endl;
+                    }
+                    */
 
                 }
+               /* if(lastIp=="10.15.175.231"){
+                    cout<<palabra<<endl;
+                }
+                */
             }
             else { //Cuando la palabra si es un mes mandamos el renglon al vector de renglones y comenzamos uno nuevo
                 i = 0; //Reinicializamos para saber en la parte del renglon que vamos
@@ -323,5 +333,6 @@ cout<<nNodos<<endl;
 
 void Bitacora::obtenerMayores(int n){
     this->arbolNodos.revInorder(n);
-   // this->arbolNodos.inorder();
+    this->arbolNodos.inorder();
+
 }

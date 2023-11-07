@@ -31,7 +31,7 @@ int main() {
         cin>>respuesta;
     }*/
     bitacora.crearArbolNodos();
-    bitacora.obtenerMayores(10);
+    bitacora.obtenerMayores(740);
 
     return 0;
 }

@@ -175,7 +175,7 @@ void MyBST::revInorder(MyNodeBST* current, int &contador,int &cont2){
         else{
             revInorder(current->right, contador,cont2);
             if(contador>0)
-                cout<<current->ip<<" "<<current->data<<endl;
+                cout<<current->ip<<" - "<<current->data<<endl;
             contador--;
             revInorder(current->left, contador,cont2);
         }
