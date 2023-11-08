@@ -1,8 +1,8 @@
 //A00572499 Santiago Gutierrez Gonzalez y A01281202 Cesar Mecinas Estrada
-//Act 2.3 - Algoritmos de Busqueda y Ordenamiento
-//10/10/2023
+//Act 3.4 - Actividad Integral de BST
+//7/11/2023
 
-//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y posteriormente permite la busqueda en un rango de Ips dando la ip inicial y final
+//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y despues nos permite observar cuales son aquellas con mas frecuencias gracias a un inorder al reves
 
 
 #include "NodoRegistro.h"

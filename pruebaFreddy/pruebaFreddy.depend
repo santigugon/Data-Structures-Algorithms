@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1699372582 source:c:\users\santi\downloads\act2_3\act2_3\build\cmakefiles\3.22.1\compileridc\cmakeccompilerid.c
+
+1699372582 source:c:\users\santi\downloads\act2_3\act2_3\build\cmakefiles\3.22.1\compileridcxx\cmakecxxcompilerid.cpp
+
+1699372581 source:c:\users\santi\downloads\act2_3\act2_3\dato.cpp
+	"Dato.h"
+
+1699372581 c:\users\santi\downloads\act2_3\act2_3\dato.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<vector>
+
+1699372581 source:c:\users\santi\downloads\act2_3\act2_3\linkedlist.cpp
+	<iostream>
+	"LinkedList.h"
+
+1699372581 c:\users\santi\downloads\act2_3\act2_3\linkedlist.h
+	<ostream>
+	"Dato.h"
+
+1699372581 source:c:\users\santi\downloads\act2_3\act2_3\main.cpp
+	<iostream>
+	"Dato.h"
+	"LinkedList.h"
+

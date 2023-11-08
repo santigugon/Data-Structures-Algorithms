@@ -1,18 +1,19 @@
-//SANTIAGO GUTIERREZ GONZALEZ
-//MATRICULA:A00572499
-//ACT 3.1-Operaciones avanzadas en un BST
-//Descripcion- Programa que implementa la estructura de datos de una arbol binario de busqueda haciendo uso del struct MyNodeBST e implementando su metodos
-//Fecha: 18/10/2023
-#include "NodoIP.h"
+//A00572499 Santiago Gutierrez Gonzalez y A01281202 Cesar Mecinas Estrada
+//Act 3.4 - Actividad Integral de BST
+//7/11/2023
+
+//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y despues nos permite observar cuales son aquellas con mas frecuencias gracias a un inorder al reves
+#include <iostream>
+#include <string>
 
 #ifndef MYBST_H_INCLUDED
 #define MYBST_H_INCLUDED
 struct MyNodeBST{
     int data;
-    string ip;
+    std::string ip;
     MyNodeBST *left,
               *right;
-    MyNodeBST(int data, string ip){
+    MyNodeBST(int data, std::string ip){
         this->data=data;
         this->ip=ip;
         this->left=this->right=nullptr;
@@ -37,14 +38,14 @@ class MyBST{
         void preorder(MyNodeBST* current);
         void inorder(MyNodeBST* current);
         void postorder(MyNodeBST* current);
-        void revInorder(MyNodeBST* current, int &contador, int& cont2);
+        void revInorder(MyNodeBST* current, int &contador);
     //public:
         MyBST();
         int length();
         bool isEmpty();
         bool search(int data);
         bool searchRec(int data);
-        bool insert(int data, string ip);
+        bool insert(int data, std::string ip);
         bool remove(int data);
         void preorder();
         void inorder();

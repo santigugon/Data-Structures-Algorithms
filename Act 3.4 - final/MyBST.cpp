@@ -1,8 +1,8 @@
-//SANTIAGO GUTIERREZ GONZALEZ
-//MATRICULA:A00572499
-//ACT 3.1-Operaciones avanzadas en un BST
-//Descripcion- Programa que implementa la estructura de datos de una arbol binario de busqueda haciendo uso del struct MyNodeBST e implementando su metodos
-//Fecha: 18/10/2023
+//A00572499 Santiago Gutierrez Gonzalez y A01281202 Cesar Mecinas Estrada
+//Act 3.4 - Actividad Integral de BST
+//7/11/2023
+
+//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y despues nos permite observar cuales son aquellas con mas frecuencias gracias a un inorder al reves
 
 #include <iostream>
 #include "MyBST.h"
@@ -166,25 +166,25 @@ void MyBST::postorder(MyNodeBST* current){
         cout<<current->data<<",";
     }
 }
-
-void MyBST::revInorder(MyNodeBST* current, int &contador,int &cont2){
-        cont2++;
+//K es el numero de ips que estamos buscando
+//Complejidad de tipo O (log n) +k
+void MyBST::revInorder(MyNodeBST* current, int &contador){
         if(current==nullptr||contador<=0){
             return;
         }
         else{
-            revInorder(current->right, contador,cont2);
+            revInorder(current->right, contador);
             if(contador>0)
-                cout<<current->ip<<" - "<<current->data<<endl;
+                cout<<current->ip<<" "<<current->data<<endl;
             contador--;
-            revInorder(current->left, contador,cont2);
+            revInorder(current->left, contador);
         }
     }
 
+//K es el numero de ips que estamos buscando
+//Complejidad de tipo O (log n) +k
 void MyBST::revInorder(int &contador){
-    int contador2=0;
-    this->revInorder(this->root,contador,contador2);
-    cout<<"CONTADOR DE LLAMADAS"<<contador2<<endl;
+    this->revInorder(this->root,contador);
 }
 
 //Complejidad de tipo Lineal O(n)

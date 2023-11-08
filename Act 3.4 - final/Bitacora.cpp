@@ -1,8 +1,8 @@
 //A00572499 Santiago Gutierrez Gonzalez y A01281202 Cesar Mecinas Estrada
-//Act 2.3 - Algoritmos de Busqueda y Ordenamiento
-//10/10/2023
+//Act 3.4 - Actividad Integral de BST
+//7/11/2023
 
-//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y posteriormente permite la busqueda en un rango de Ips dando la ip inicial y final
+//Descripcion- Este programa realiza el ordenamiento de un registro de IPs con su respectivo mensaje, este ordenamiento lo realiza en base a las jerarquias de las IPs y despues nos permite observar cuales son aquellas con mas frecuencias gracias a un inorder al reves
 
 
 #include "Bitacora.h"
@@ -37,8 +37,8 @@ Bitacora::Bitacora(){
     archivo.open("bitacora2.txt");
 
     if (archivo.is_open()) { //Siempre se verifica que el archivo este abierto
-        string renglon = "";
-        string palabra = "";
+        string renglon;
+        string palabra;
         int j = 0;
         int i = 0;
         string ip;
@@ -84,9 +84,6 @@ Bitacora::Bitacora(){
         nodosIpOrdenada.insertLast(nuevoNodoRegistro);
 
     }
-
-
-   //this->nodosIpOrdenada.print();
 }
 
 //mergeSort-complejidad de orden Lineal O(n)
@@ -126,14 +123,9 @@ void Mezcla(MyNodoLL* cabeza, MyNodoLL** ini, MyNodoLL** fin){
         }
     }
 
-    //Ya que sabemos que hemos llegado en medio vamos a proceder a redefinir el inicio y el fin
     *ini= cabeza;
     *fin= medio->next;
     medio->next=nullptr;
-    //cout<<medio->data.getMensaje(); //"Rompemos por asi decir la lista o el vinculo de los medio"
-
-
-
 }
 
 //mergeSort-complejidad de orden Lineal O(n log(n))
@@ -153,9 +145,6 @@ void Bitacora::mergeSort(MyNodoLL** primero){
     mergeSort(&fin);
 
     (*primero)=mergeSort(ini,fin);
-
-    //this->nodosIpOrdenada.print();
-
 }
 
 //Complejidad de orden constante O(1)
@@ -242,7 +231,6 @@ void Bitacora::busquedaBitacora(){
             return;
         }
         actual=actual->next;
-
     }
     pov.close();
     return;
@@ -250,89 +238,37 @@ void Bitacora::busquedaBitacora(){
 
 
 
+//Complejidad O(n) Lineal puesto que recorre la totalidad del archivo
 void Bitacora::crearArbolNodos(){
-
-
-    ifstream archivo;
-      //El mapa para representar los meses con su numero
-    unordered_map<string, int>meses;
-    meses["Jan"] = 1;
-    meses["Feb"] = 2;
-    meses["Mar"] = 3;
-    meses["Abr"] = 4;
-    meses["May"] = 5;
-    meses["Jun"] = 6;
-    meses["Jul"] = 7;
-    meses["Aug"] = 8;
-    meses["Sep"] = 9;
-    meses["Oct"] = 10;
-    meses["Nov"] = 11;
-    meses["Dec"] = 12;
-    meses["﻿Oct"]=13;
-
-
-    this->crearBitacoraOrdenada();
-
-    archivo.open("bitacoraOrdenada2IP-Eq8.txt");
-
-    int nNodos=0;
-    if (archivo.is_open()) { //Siempre se verifica que el archivo este abierto
-        string renglon = "";
-        string palabra;
-        int j = 0;
-        int i = 0;
-        string ip;
-        string ipSinPuerto="";
-        int contadorIp=0;
-        string lastIp;
-        while (archivo.good()) {
-            archivo >> palabra; //Saca string por string del documento
-
-            if (meses[palabra] < 1) { //en caso de que la palabra no sea un mes hacemos lo siguiente
-                if (i == 3) { //En la iteracion donde se encuentra la hora con min y seg usamos substr para obtener el numero
-
-                    lastIp=ipSinPuerto;
-                    ipSinPuerto="";
-                    ip=palabra;
-                    for(int i=0;i<ip.size();i++){
-                        if(ip[i]==':')break;
-                        ipSinPuerto.push_back(ip[i]);
-                    }
-
-                    if(ipSinPuerto!=lastIp &&lastIp!=""){
-
-                        this->arbolNodos.insert(contadorIp,lastIp);
-                        contadorIp=1;
-                        nNodos++;
-                    }
-                    else{
-                        contadorIp++;
-                    }
-                    /*if(ipSinPuerto=="10.15.175.231"){
-                        cout<<ip<<endl;
-                    }
-                    */
-
-                }
-               /* if(lastIp=="10.15.175.231"){
-                    cout<<palabra<<endl;
-                }
-                */
+    string ip;
+    string ipSinPuerto="";
+    int contadorIp=0;
+    string lastIp;
+    MyNodoLL* actual= this->nodosIpOrdenada.head;
+    while (actual!=nullptr) {
+        lastIp=ipSinPuerto;
+        ipSinPuerto="";
+        ip=actual->data.getIp();
+        for(int i=0;i<ip.size();i++){
+            if(ip[i]==':')break;
+                ipSinPuerto.push_back(ip[i]);
             }
-            else { //Cuando la palabra si es un mes mandamos el renglon al vector de renglones y comenzamos uno nuevo
-                i = 0; //Reinicializamos para saber en la parte del renglon que vamos
+            if(ipSinPuerto!=lastIp &&lastIp!=""){
+                this->arbolNodos.insert(contadorIp,lastIp);
+                contadorIp=1;
             }
-            i++;
+            else{
+                contadorIp++;
+            }
 
+        actual=actual->next;
         }
-        this->arbolNodos.insert(contadorIp,lastIp);
-    }
-
-cout<<nNodos<<endl;
+    this->arbolNodos.insert(contadorIp,lastIp);
 }
+
+//k=numero de elementos que estamos buscando
+//Complejidad de tipo O(log n)+k
 
 void Bitacora::obtenerMayores(int n){
     this->arbolNodos.revInorder(n);
-    this->arbolNodos.inorder();
-
 }

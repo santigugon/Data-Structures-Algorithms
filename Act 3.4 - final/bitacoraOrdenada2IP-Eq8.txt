@@ -4277,7 +4277,7 @@ Sep 23 22:11:11 10.15.175.231:5548 Failed password for illegal user guest
 Oct 20 3:10:23 10.15.175.231:5617 Failed password for illegal user guest
 Jul 18 21:23:39 10.15.175.231:5787 Failed password for illegal user guest
 Oct 21 14:39:33 10.15.175.231:6096 Failed password for illegal user test
-﻿Oct 9 10:32:24 10.15.175.231:6166 Failed password for illegal user guest
+Oct 9 10:32:24 10.15.175.231:6166 Failed password for illegal user guest
 Jul 7 22:18:58 10.15.175.231:6195 Illegal user
 Jun 28 17:08:11 10.15.175.231:6240 Failed password for illegal user guest
 Aug 13 11:05:23 10.15.175.231:6463 Illegal user
@@ -9341,7 +9341,7 @@ Oct 19 22:40:03 10.15.181.243:5498 Failed password for illegal user test
 Aug 18 23:50:58 10.15.181.243:5624 Illegal user
 Jul 1 23:25:32 10.15.181.243:5654 Failed password for illegal user test
 Jun 20 23:08:10 10.15.181.243:5869 Illegal user
-Jul 14 10:06:22 10.15.181.243:5926 Illegal user 
+Jul 14 10:06:22 10.15.181.243:5926 Illegal user user 
 Jun 27 6:10:16 10.15.181.243:5980 Failed password for admin
 Oct 22 0:24:04 10.15.181.243:5981 Failed password for admin
 Aug 23 6:50:37 10.15.181.243:5984 Failed password for root
