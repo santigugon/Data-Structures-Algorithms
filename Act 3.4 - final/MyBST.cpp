@@ -179,7 +179,7 @@ void MyBST::revInorder(MyNodeBST* current, int &contador){
             contador--;
             revInorder(current->left, contador);
         }
-    }
+}
 
 //K es el numero de ips que estamos buscando
 //Complejidad de tipo O (log n) +k

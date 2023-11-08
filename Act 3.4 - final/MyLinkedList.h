@@ -44,6 +44,5 @@ class MyLinkedList{
         void removeAt(int pos);
         void print();
 
-
 };
 #endif // MYLINKEDLIST_H_INCLUDED

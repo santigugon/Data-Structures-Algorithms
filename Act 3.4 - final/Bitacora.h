@@ -21,7 +21,6 @@ class Bitacora{
         MyNodoLL* ptr2;
         MyLinkedList nodosIpOrdenada;
         MyBST arbolNodos;
-        int contador=0;
     public:
         Bitacora();
         void mergeSort(MyNodoLL**);
@@ -33,8 +32,6 @@ class Bitacora{
         void busquedaBitacora();
         void crearArbolNodos();
         void obtenerMayores(int n);
-
-
 };
 
 

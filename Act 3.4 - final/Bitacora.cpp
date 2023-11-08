@@ -238,7 +238,7 @@ void Bitacora::busquedaBitacora(){
 
 
 
-//Complejidad O(n) Lineal puesto que recorre la totalidad del archivo
+//Complejidad O(n log n) Lineal puesto que recorre la totalidad del archivo y logaritmica por la insercion de los nodos que fuimos creando
 void Bitacora::crearArbolNodos(){
     string ip;
     string ipSinPuerto="";
@@ -262,13 +262,12 @@ void Bitacora::crearArbolNodos(){
             }
 
         actual=actual->next;
-        }
+    }
     this->arbolNodos.insert(contadorIp,lastIp);
 }
 
 //k=numero de elementos que estamos buscando
 //Complejidad de tipo O(log n)+k
-
 void Bitacora::obtenerMayores(int n){
     this->arbolNodos.revInorder(n);
 }
