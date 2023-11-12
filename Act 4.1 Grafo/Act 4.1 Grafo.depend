@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1699815561 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.1 grafo\main.cpp
+1699816119 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.1 grafo\main.cpp
 	<iostream>
 	"MyGraph.h"
 
@@ -9,6 +9,6 @@
 	"queue"
 	"stack"
 
-1699815543 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.1 grafo\mygraph.cpp
+1699816370 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.1 grafo\mygraph.cpp
 	"MyGraph.h"
 

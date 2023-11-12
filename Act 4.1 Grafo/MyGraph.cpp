@@ -21,16 +21,19 @@ void MyGraph::DFS(int nodoI){
             flag.push_back(false);
         }
         for(int nodo=nodoI; nodo<flag.size();nodo++){
-            flag[nodo]=true;
-            pilaVisitados.push(nodo);
+            if(!flag[nodo]){
+                flag[nodo]=true;
+                pilaVisitados.push(nodo);
+            }
             while(!pilaVisitados.empty()){
                 nodoTope=pilaVisitados.top();
                 cout<<nodoTope<<", ";
                 pilaVisitados.pop();
                   for(int j=0; j<this->adjMatr.size(); j++){
-                    if(this->adjMatr[j][nodoTope]==1 && !flag[j]){
-                        pilaVisitados.push(j);
-                        flag[j]=true;
+                    if(this->adjMatr[nodoTope][adjMatr.size()-j]==1 && !flag[adjMatr.size()-j]){
+
+                        pilaVisitados.push(adjMatr.size()-j);
+                        flag[adjMatr.size()-j]=true;
                     }
                 }
             }
