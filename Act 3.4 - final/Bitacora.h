@@ -21,6 +21,7 @@ class Bitacora{
         MyNodoLL* ptr2;
         MyLinkedList nodosIpOrdenada;
         MyBST arbolNodos;
+        int contador=0;
     public:
         Bitacora();
         void mergeSort(MyNodoLL**);
