@@ -31,5 +31,7 @@ int main()
 
     MyGraph prueba(vectorResultante);
     prueba.BFS(3);
+    cout<<"DFS"<<endl;
+     prueba.DFS(0);
     return 0;
 }

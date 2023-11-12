@@ -13,11 +13,27 @@ void MyGraph::loadGraph(vector<vector<int>> &matrAdj){
 
 void MyGraph::DFS(int nodoI){
     if(this->adjMatr.size()>0){
-        stack<int>
+        int nodoTope;
+        stack<int> pilaVisitados;
         //Aqui conocemos y verificamos hijos visitados
         vector<bool> flag;
         for(int i=0; i<this->adjMatr.size();i++){
             flag.push_back(false);
+        }
+        for(int nodo=nodoI; nodo<flag.size();nodo++){
+            flag[nodo]=true;
+            pilaVisitados.push(nodo);
+            while(!pilaVisitados.empty()){
+                nodoTope=pilaVisitados.top();
+                cout<<nodoTope<<", ";
+                pilaVisitados.pop();
+                  for(int j=0; j<this->adjMatr.size(); j++){
+                    if(this->adjMatr[j][nodoTope]==1 && !flag[j]){
+                        pilaVisitados.push(j);
+                        flag[j]=true;
+                    }
+                }
+            }
         }
     }
 
@@ -28,7 +44,7 @@ void MyGraph::BFS(int nodoI){
     if(this->adjMatr.size()>0){
         cout<<"Hola"<<endl;
         int nodoTope;
-        std::queue<int> colaNoVisitados;
+        std::queue<int> colaVisitados;
         vector<bool> flag;
         for(int i=0; i<this->adjMatr.size();i++){
             flag.push_back(false);
@@ -36,19 +52,19 @@ void MyGraph::BFS(int nodoI){
         for(int nodo=nodoI; nodo<flag.size();nodo++){
             //Aquí agregamos el nodo a la cola cuando no este marcado como visitado
             if(!flag[nodo]){
-              colaNoVisitados.push(nodo);
+              colaVisitados.push(nodo);
               //Lo marcamos como visitado
               flag[nodo]=true;
             }
-            while(!colaNoVisitados.empty()){
+            while(!colaVisitados.empty()){
                 //Guardamos el nodo
-                nodoTope= colaNoVisitados.front();
+                nodoTope= colaVisitados.front();
                 //Sacamos el nodo de la cola
                 cout<<nodoTope<<", ";
-                colaNoVisitados.pop();
+                colaVisitados.pop();
                 for(int j=0; j<this->adjMatr.size(); j++){
                     if(this->adjMatr[j][nodoTope]==1 && !flag[j]){
-                        colaNoVisitados.push(j);
+                        colaVisitados.push(j);
                         flag[j]=true;
                     }
                 }
