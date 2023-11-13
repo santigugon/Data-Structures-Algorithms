@@ -20,3 +20,9 @@ public:
 };
 
 #endif // MYGRAPH_H_INCLUDED
+
+//REFERENCIAS consultadas para la creacion
+//(PSEUDOCODIGO)
+//Presentacion 08.2-GRAFOSYRECORRIDOS por Edgar Salinas
+//Salinas Gurrión, E. G., & de la Cueva Hernández, V. M. (2020). Estructuras de datos y algoritmos fundamentales. Digital. https://www.amazon.com.mx/Estructuras-datos-y-algoritmos-fundamentales-ebook/dp/B08FBJ9YFM/ref=cm_cr_arp_d_product_top?ie=UTF8#customerReviews
+//BettaTech. (2021b, noviembre 29). Algoritmos BFS y DFS (Recorridos en grafos) [Vídeo]. YouTube. https://www.youtube.com/watch?v=_Yf8tneauJ8

@@ -1,15 +1,23 @@
 #include "MyGraph.h"
 using namespace std;
 
+//Complejidad de tipo constante O(1)
 MyGraph::MyGraph(vector<vector<int>> &matrAdj){
-    if(matrAdj.size()==matrAdj[0].size()){
-        loadGraph(matrAdj);
+    if(matrAdj.size()>0){
+        if(matrAdj.size()==matrAdj[0].size())
+            loadGraph(matrAdj);
     }
 }
+
 
 void MyGraph::loadGraph(vector<vector<int>> &matrAdj){
     this->adjMatr=matrAdj;
 }
+
+//N=Num de nodos
+//A=Num de aristas
+//Complejidad media O(N+A)
+//Complejidad peor caso O(N^2)
 
 void MyGraph::DFS(int nodoI){
     if(this->adjMatr.size()>0){
@@ -29,11 +37,12 @@ void MyGraph::DFS(int nodoI){
                 nodoTope=pilaVisitados.top();
                 cout<<nodoTope<<", ";
                 pilaVisitados.pop();
-                  for(int j=0; j<this->adjMatr.size(); j++){
-                    if(this->adjMatr[nodoTope][adjMatr.size()-j]==1 && !flag[adjMatr.size()-j]){
+                  for(int j=0; j<=this->adjMatr.size(); j++){
+                    int proximoHijo=adjMatr.size()-j;
+                    if(this->adjMatr[nodoTope][proximoHijo]==1 && !flag[proximoHijo]){
 
-                        pilaVisitados.push(adjMatr.size()-j);
-                        flag[adjMatr.size()-j]=true;
+                        pilaVisitados.push(proximoHijo);
+                        flag[proximoHijo]=true;
                     }
                 }
             }
@@ -42,10 +51,14 @@ void MyGraph::DFS(int nodoI){
 
 }
 
+//N=Num de nodos
+//A=Num de aristas
+//Complejidad media O(N+A)
+//Complejidad peor caso O(N^2)
+
 void MyGraph::BFS(int nodoI){
 
     if(this->adjMatr.size()>0){
-        cout<<"Hola"<<endl;
         int nodoTope;
         std::queue<int> colaVisitados;
         vector<bool> flag;
@@ -73,8 +86,6 @@ void MyGraph::BFS(int nodoI){
                 }
             }
         }
-
-
     }
 }
 
