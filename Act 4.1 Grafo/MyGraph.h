@@ -1,3 +1,9 @@
+
+//A00572499 Santiago Gutierrez Gonzalez
+//Act 4.1- Grafo: sus representaciones y sus recorridos
+//12/11/2023
+
+////Descripcion- Este programa realiza el recorrido en profundidad y amplitud de un arbol
 #ifndef MYGRAPH_H_INCLUDED
 #define MYGRAPH_H_INCLUDED
 

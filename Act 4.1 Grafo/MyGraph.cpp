@@ -1,3 +1,8 @@
+//A00572499 Santiago Gutierrez Gonzalez
+//Act 4.1- Grafo: sus representaciones y sus recorridos
+//12/11/2023
+
+////Descripcion- Este programa realiza el recorrido en profundidad y amplitud de un arbol
 #include "MyGraph.h"
 using namespace std;
 
@@ -9,13 +14,13 @@ MyGraph::MyGraph(vector<vector<int>> &matrAdj){
     }
 }
 
-
+//Complejidad de tipo constante O(1)
 void MyGraph::loadGraph(vector<vector<int>> &matrAdj){
     this->adjMatr=matrAdj;
 }
 
 //N=Num de nodos
-//A=Num de aristas
+//A=Num de arcos
 //Complejidad media O(N+A)
 //Complejidad peor caso O(N^2)
 
@@ -35,7 +40,7 @@ void MyGraph::DFS(int nodoI){
             }
             while(!pilaVisitados.empty()){
                 nodoTope=pilaVisitados.top();
-                cout<<nodoTope<<", ";
+                cout<<nodoTope<<",";
                 pilaVisitados.pop();
                   for(int j=0; j<=this->adjMatr.size(); j++){
                     int proximoHijo=adjMatr.size()-j;
@@ -47,15 +52,15 @@ void MyGraph::DFS(int nodoI){
                 }
             }
         }
+        cout<<endl;
     }
 
 }
 
 //N=Num de nodos
-//A=Num de aristas
+//A=Num de arcos
 //Complejidad media O(N+A)
 //Complejidad peor caso O(N^2)
-
 void MyGraph::BFS(int nodoI){
 
     if(this->adjMatr.size()>0){
@@ -76,7 +81,7 @@ void MyGraph::BFS(int nodoI){
                 //Guardamos el nodo
                 nodoTope= colaVisitados.front();
                 //Sacamos el nodo de la cola
-                cout<<nodoTope<<", ";
+                cout<<nodoTope<<",";
                 colaVisitados.pop();
                 for(int j=0; j<this->adjMatr.size(); j++){
                     if(this->adjMatr[j][nodoTope]==1 && !flag[j]){
@@ -86,6 +91,7 @@ void MyGraph::BFS(int nodoI){
                 }
             }
         }
+        cout<<endl;
     }
 }
 
