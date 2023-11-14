@@ -4,7 +4,10 @@
 
 #ifndef MYGRAPH_H_INCLUDED
 #define MYGRAPH_H_INCLUDED
+#include <iostream>
 #include "vector"
+
+using namespace std;
 
 class MyGraph{
     private:
