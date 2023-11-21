@@ -1,12 +1,14 @@
 # depslib dependency file v1.0
-1699931941 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.2 grafo\main.cpp
+1700179402 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.2 grafo\main.cpp
 	"MyGraph.h"
 	<iostream>
 
-1699931376 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.2 grafo\mygraph.h
+1700531278 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.2 grafo\mygraph.h
 	<iostream>
 	"vector"
+	"queue"
+	"stack"
 
-1699932037 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.2 grafo\mygraph.cpp
+1700531830 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 4.2 grafo\mygraph.cpp
 	"MyGraph.h"
 

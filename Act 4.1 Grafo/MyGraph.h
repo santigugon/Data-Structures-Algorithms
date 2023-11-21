@@ -16,7 +16,7 @@ using namespace std;
 class MyGraph {
 private:
     vector<vector<int>> adjMatr;
-    int visitedNodes;
+
 public:
     MyGraph(vector<vector<int>> &matrAdj);
     void loadGraph(vector<vector<int>> &matrAdj);

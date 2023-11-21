@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\main.cpp
+	<iostream>
+
+1696031612 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\mylinkedlist.cpp
+	"MyLinkedList.h"
+	<iostream>
+
+1700521582 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\mylinkedlist.h
+	<iostream>
+
+1700521592 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\myhashtable.cpp
+	"MyLinkedList.h"
+	"MyHashTable.h"
+
+1700519972 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\myhashtable.h
+	"MyLinkedList.h"
+	<iostream>
+	"string"
+
