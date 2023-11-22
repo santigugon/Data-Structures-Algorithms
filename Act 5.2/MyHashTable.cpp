@@ -51,7 +51,7 @@ bool MyHashTable::isEmpty(){
 
 //Complejidad caso medio de tipo constante O(1)
 //Complejidad peor caso de tipo lineal O(n)
-void MyHashTable::put(string key, int value){
+void MyHashTable::put(string key, MyBST* value){
     this->size++;
     if(float(size)/float(sizeA)>=.75){
         this->rehashing();
@@ -70,7 +70,7 @@ int MyHashTable::getPos(string key){
 
 //Complejidad caso medio de tipo constante O(1)
 //Complejidad peor caso de tipo lineal O(n)
-int MyHashTable::get(string key){
+MyBST* MyHashTable::get(string key){
     if(this->size>0){
         int pos=getPos(key);
         MyNodoLL* aux=this->tabla[pos].head;
@@ -84,8 +84,12 @@ int MyHashTable::get(string key){
                 aux=aux->next;
             }
         }
+    MyBST* vacio=new MyBST();
+    return vacio;
     }
-    return -1;
+    MyBST* vacio=new MyBST();
+    return vacio;
+    //AGREGAR ARBOL INVALIDO AQUI
 }
 
 //Complejidad caso medio de tipo constante O(1)

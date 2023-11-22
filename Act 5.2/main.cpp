@@ -1,10 +1,15 @@
 #include <iostream>
 #include "MyHashTable.h"
+#include "Bitacora.h"
+
 
 using namespace std;
 
 int main()
 {
+    Bitacora bitacora;
+
+    /*
     MyHashTable prueba;
     prueba.remove("3");
     string key= "8";
@@ -41,9 +46,7 @@ int main()
     prueba.put("5",12);
     prueba.put("15",6);
     prueba.put("50",7);
-    for(int i=0; i<11;i++){
-        cout<<prueba.tabla[i]<<endl;
-    }
+
     cout<<"TAMANIO DE LA TABLA "<<prueba.sizeA<<" N ELEMENTOS DENTRO " <<prueba.size<<endl;
     key="12";
     cout<<" para el key "<<key<<":"<<prueba.get(key)<<endl;
@@ -82,9 +85,7 @@ int main()
     cout<<"TAMANIO DE LA TABLA "<<prueba.sizeA<<" N ELEMENTOS DENTRO " <<prueba.size<<endl;
     prueba.put("10",10);
     cout<<"TAMANIO DE LA TABLA "<<prueba.sizeA<<" N ELEMENTOS DENTRO " <<prueba.size<<endl;
-     for(int i=0; i<23;i++){
-        cout<<prueba.tabla[i]<<endl;
-    }
+
      key="12";
     cout<<" para el key "<<key<<":"<<prueba.get(key)<<endl;
       key="1";
@@ -136,5 +137,6 @@ int main()
     pruebaLeak->put("key", 42);
     cout<<"para el key "<<key<<":"<<pruebaLeak->get(key)<<endl;
     cout << "Hello world!" << endl;
+    */
     return 0;
-}
+};

@@ -225,6 +225,7 @@ int main()
                 renglon.append(palabra);
                 renglon.append(" ");
                 if (i == 2) { //En la iteracion donde se encuentra la hora con min y seg usamos substr para obtener el numero
+
                     fechaNum += int(palabra[0] - '0') * 10000 * 10; //Decenas de la hora
                     fechaNum += int(palabra[1] - '0') * 10000; //Uds de la hora
                     fechaNum += int(palabra[3] - '0') * 100 * 10; //Decenas de los min

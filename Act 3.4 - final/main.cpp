@@ -27,7 +27,7 @@ void bitacoraFrecuencias(int nIpsAMostrar){
 
 int main() {
     //Variable a cambiar si queremos modificar el numero de ips a mostrar
-    int nIpsAMostrar=800;
+    int nIpsAMostrar=7;
     bitacoraFrecuencias(nIpsAMostrar);
 
     return 0;

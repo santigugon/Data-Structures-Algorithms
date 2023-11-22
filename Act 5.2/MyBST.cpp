@@ -32,14 +32,15 @@ bool MyBST::isEmpty(){
 
 //Peor caso: Complejidad de tipo Lineal O(n)
 //Caso medio: Complejidad  O(h)|| h= altura de un arbol
-bool MyBST::insert(int data, string ip){
+bool MyBST::insert(int data, string fecha){
    MyNodeBST* actual= this->root;
    bool insertado=false;
    while(!insertado){
         if(this->size==0){
-            actual= new MyNodeBST(data, ip);
+            actual= new MyNodeBST(data, fecha);
             insertado=true;
             this->root=actual;
+            this->ip=ip;
             this->size++;
             return true;
         }
@@ -139,8 +140,9 @@ void MyBST::inorder(MyNodeBST* current){
         return;
     }
     else{
+        this->nLineas+=current->data;
         inorder(current->left);
-        cout<<current->data<<" ip "<<current->ip<<endl;
+        cout<<current->fecha<<endl;
         inorder(current->right);
     }
 
@@ -148,6 +150,7 @@ void MyBST::inorder(MyNodeBST* current){
 
 //Complejidad de tipo Lineal O(n)
 void MyBST::inorder(){
+    cout<<"IP: "<<this->ip<<endl;
      if(this->size!=0){
         inorder(this->root);
     }
