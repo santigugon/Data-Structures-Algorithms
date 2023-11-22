@@ -1,24 +1,29 @@
 //SANTIAGO GUTIERREZ GONZALEZ
 //MATRICULA:A00572499
-//ACT 2.1-Implementacion de un ADT de estructura de datos lineales
-//Descripcion- Programa que implementa la estructura de datos de una lista ligada haciendo uso del struct nodo e implementando su metodos
-//Fecha: 29/09/2023
+//ACT 5.1-Implementacion individual de operaciones sobre conjuntos
+//Descripcion- Programa que sirve para implementar la insercion y busqueda de elementos en un HashTable
+//Fecha: 21/11/2023
 #include <iostream>
 #ifndef MYLINKEDLIST_H_INCLUDED
 #define MYLINKEDLIST_H_INCLUDED
+#include "string"
 
+using namespace std;
 //Aqui generamos el nodo donde se almacena los datos y un apuntador al proximo nodo
 struct MyNodoLL
 {
     int data;
+
+    string key;
     MyNodoLL *next;
     //Complejidad de tipo lineal O(1)
-    MyNodoLL(int data, MyNodoLL* next){
+    MyNodoLL(int data,string key, MyNodoLL* next){
         this->data=data;
         this->next=next;
+        this->key=key;
     }
     //Complejidad de tipo lineal O(1)
-    MyNodoLL(int data):MyNodoLL(data, nullptr){
+    MyNodoLL(int data,string key):MyNodoLL(data,key, nullptr){
     }
 };
 
@@ -30,15 +35,16 @@ class MyLinkedList{
         MyNodoLL* tail;
         MyLinkedList();
         ~MyLinkedList();
+        void deleteLinkedList();
         int first();
         int last();
         int length()const;
         bool isEmpty();
         int getAt(int pos);
-        void setAt(int pos, int data);
-        void insertFirst(int data);
-        void insertLast(int data);
-        void insertAt(int pos, int data);
+        void setAt(int pos, int data,string key);
+        void insertFirst(int data,string key);
+        void insertLast(int data,string key);
+        void insertAt(int pos, int data,string key);
         void removeFirst();
         void removeLast();
         void removeAt(int pos);

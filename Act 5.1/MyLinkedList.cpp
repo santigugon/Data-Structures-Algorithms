@@ -1,8 +1,8 @@
 //SANTIAGO GUTIERREZ GONZALEZ
 //MATRICULA:A00572499
-//ACT 2.1-Implementacion de un ADT de estructura de datos lineales
-//Descripcion- Programa que implementa la estructura de datos de una lista ligada haciendo uso del struct nodo e implementando su metodos
-//Fecha: 29/09/2023
+//ACT 5.1-Implementacion individual de operaciones sobre conjuntos
+//Descripcion- Programa que sirve para implementar la insercion y busqueda de elementos en un HashTable
+//Fecha: 21/11/2023
 #include "MyLinkedList.h"
 #include <iostream>
 using namespace std;
@@ -15,6 +15,12 @@ MyLinkedList::MyLinkedList(){
 
 //Complejidad de tipo lineal O(n)
 MyLinkedList::~MyLinkedList(){
+    while(!this->isEmpty()){
+        this->removeFirst();
+    }
+}
+
+void MyLinkedList::deleteLinkedList(){
     while(!this->isEmpty()){
         this->removeFirst();
     }
@@ -49,8 +55,8 @@ bool MyLinkedList::isEmpty(){
 }
 
 //Complejidad de tipo constante O(1)
-void MyLinkedList::insertFirst(int data){
-    this->head= new MyNodoLL(data, this->head);
+void MyLinkedList::insertFirst(int data, string key){
+    this->head= new MyNodoLL(data, key, this->head);
     if(this->size==0){
         this->tail=this->head;
     }
@@ -58,31 +64,37 @@ void MyLinkedList::insertFirst(int data){
 }
 
 //Complejidad de tipo constante O(1)
-void MyLinkedList::insertLast(int data){
-    MyNodoLL* nodoFinal=new MyNodoLL (data);
-    this->tail->next=nodoFinal;
-    this->tail= nodoFinal;
-    if(this->size==0){
-        this->head=this->tail;
-    }
-    this->size++;
+void MyLinkedList::insertLast(int data, string key) {
+    MyNodoLL* nodoFinal = new MyNodoLL(data, key);
 
+    if (this->size == 0) {
+        // If the list is empty, both head and tail point to the new node
+        this->head = nodoFinal;
+        this->tail = nodoFinal;
+    } else {
+        // If the list is not empty, update the tail and connect the last node to the new node
+        this->tail->next = nodoFinal;
+        this->tail = nodoFinal;
+    }
+
+    this->size++;
 }
 
+
 //Complejidad de tipo lineal O(n)
-void MyLinkedList::insertAt(int pos, int data){
+void MyLinkedList::insertAt(int pos, int data, string key){
     if(pos>this->size||pos<0){
-        throw std::invalid_argument("La posicion es mas grande que la lista o menor a 0 " );//,pos, " en una lista de tamaño ", this->size
+        throw std::invalid_argument("La posicion es mas grande que la lista o menor a 0 " );//,pos, " en una lista de tamaï¿½o ", this->size
     }
     else{
         if(pos==0){
-            this->insertFirst(data);
+            this->insertFirst(data, key);
         }
         else if(pos==this->size){
-            this->insertLast(data);
+            this->insertLast(data, key);
         }
         else{
-            MyNodoLL* nodoNuevo= new MyNodoLL(data);
+            MyNodoLL* nodoNuevo= new MyNodoLL(data, key);
             MyNodoLL* actual=this->head;
             int posActual=0;
             actual=head;
@@ -186,7 +198,7 @@ int MyLinkedList::getAt(int pos){
 }
 
 //Complejidad de tipo lineal O(n)
-void MyLinkedList::setAt(int pos, int data){
+void MyLinkedList::setAt(int pos, int data, string key){
     if(pos>=this->size||pos<0){
         throw std::invalid_argument("La posicion indicada no es valida o la lista esta vacia");
     }
@@ -200,6 +212,7 @@ void MyLinkedList::setAt(int pos, int data){
         aux->data=data;
     }
 }
+
 
 
 

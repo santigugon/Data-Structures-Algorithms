@@ -1,7 +1,14 @@
+//SANTIAGO GUTIERREZ GONZALEZ
+//MATRICULA:A00572499
+//ACT 5.1-Implementacion individual de operaciones sobre conjuntos
+//Descripcion- Programa que sirve para implementar la insercion y busqueda de elementos en un HashTable
+//Fecha: 21/11/2023
+
 #ifndef MYHASHTABLE_H_INCLUDED
 #define MYHASHTABLE_H_INCLUDED
-#include "MyLinkedList.h"
+#include <list>
 #include <iostream>
+#include "MyLinkedList.h"
 #include "string"
 
 using namespace std;
