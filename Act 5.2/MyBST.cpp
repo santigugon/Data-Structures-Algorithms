@@ -19,6 +19,12 @@ MyBST::MyBST(){
     this->root=nullptr;
     this->size=0;
 }
+MyBST::MyBST(string ip){
+    this->root=nullptr;
+    this->size=0;
+    this->ip=ip;
+}
+
 
 //Complejidad de tipo constante O(1)
 int MyBST::length(){
@@ -40,13 +46,12 @@ bool MyBST::insert(int data, string fecha){
             actual= new MyNodeBST(data, fecha);
             insertado=true;
             this->root=actual;
-            this->ip=ip;
             this->size++;
             return true;
         }
         else if(actual->data>= data){
             if(actual->left==nullptr){
-                actual->left= new MyNodeBST(data,ip);
+                actual->left= new MyNodeBST(data,fecha);
                 this->size++;
                 insertado=true;
                 return true;
@@ -57,7 +62,7 @@ bool MyBST::insert(int data, string fecha){
         }
         else if( actual->data<data){
             if(actual->right==nullptr){
-                actual->right= new MyNodeBST(data, ip), ip;
+                actual->right= new MyNodeBST(data,fecha);
                 insertado=true;
                 this->size++;
                 return true;
@@ -140,7 +145,6 @@ void MyBST::inorder(MyNodeBST* current){
         return;
     }
     else{
-        this->nLineas+=current->data;
         inorder(current->left);
         cout<<current->fecha<<endl;
         inorder(current->right);
@@ -176,7 +180,7 @@ void MyBST::revInorder(MyNodeBST* current, int &contador){
         else{
             revInorder(current->right, contador);
             if(contador>0)
-                cout<<current->ip<<" "<<current->data<<endl;
+                cout<<current->fecha<<" "<<current->data<<endl;
             contador--;
             revInorder(current->left, contador);
         }

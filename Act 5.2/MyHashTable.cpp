@@ -84,10 +84,10 @@ MyBST* MyHashTable::get(string key){
                 aux=aux->next;
             }
         }
-    MyBST* vacio=new MyBST();
+    MyBST* vacio=new MyBST(key);
     return vacio;
     }
-    MyBST* vacio=new MyBST();
+    MyBST* vacio=new MyBST(key);
     return vacio;
     //AGREGAR ARBOL INVALIDO AQUI
 }

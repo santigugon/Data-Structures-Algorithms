@@ -21,7 +21,7 @@
 	"MyLinkedList.h"
 	"string"
 
-1700693988 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.cpp
+1700697366 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.cpp
 	"MyLinkedList.h"
 	"MyHashTable.h"
 
@@ -56,7 +56,7 @@
 	"MyHashTable.h"
 	<fstream>
 
-1700696011 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.h
+1700696637 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.h
 	<iostream>
 	<string>
 
@@ -75,13 +75,13 @@
 	<queue>
 	<vector>
 
-1700695700 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.cpp
+1700698274 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.cpp
 	<iostream>
 	"MyBST.h"
 	<queue>
 	<vector>
 
-1700695785 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.cpp
+1700698166 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.cpp
 	"Bitacora.h"
 	<unordered_map>
 

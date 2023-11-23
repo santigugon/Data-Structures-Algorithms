@@ -47,11 +47,12 @@ class MyBST{
         void revInorder(MyNodeBST* current, int &contador);
     //public:
         MyBST();
+        MyBST(std::string ip);
         int length();
         bool isEmpty();
         bool search(int data);
         bool searchRec(int data);
-        bool insert(int data, std::string ip);
+        bool insert(int data, std::string fecha);
         bool remove(int data);
         void preorder();
         void inorder();
