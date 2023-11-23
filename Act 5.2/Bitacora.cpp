@@ -14,7 +14,6 @@ using namespace std;
 //Complejidad O(m) m=numero de palabras
 Bitacora::Bitacora(){
 
-    cout<<"HOLA"<<endl;
     ifstream archivo;
       //El mapa para representar los meses con su numero
     unordered_map<string, int>meses;
@@ -55,17 +54,14 @@ Bitacora::Bitacora(){
             if(i==0){
                 renglon.append(palabra);
                 renglon.append(" ");
-                //cout<<"Hoola1";
                 fechaNum += meses[palabra] * 100000000; //Sumanos al numero con el mes primero que nada
             }
             if (i == 1) {
                 renglon.append(palabra);
                 renglon.append(" ");
-                //cout<<"Hoola2";
                 fechaNum += stoi(palabra) * 1000000; //En la segunda iteracion que encontramos la palabra que representa el dia
             }
             if (i == 2) { //En la iteracion donde se encuentra la hora con min y seg usamos substr para obtener el numero
-                    //cout<<"Hoola3";
                     renglon.append(palabra);
                     fechaTexto=renglon;
                     int decenas;
@@ -78,7 +74,6 @@ Bitacora::Bitacora(){
                     fechaNum += int(palabra[7-decenas] - '0');
             }
             if (i == 3) { //En la iteracion donde se encuentra la hora con min y seg usamos substr para obtener el numero
-                    //cout<<"Hoola";
                     ip=palabra;
 
                     ipSinPuerto="";
@@ -103,7 +98,6 @@ Bitacora::Bitacora(){
             }
         cout<<"NumLineas"<<numLineas<<endl;
         }
-        cout<<"INORDER?"<<endl;
         this->tablaRegistros->get("10.15.182.253")->inorder();
         //FACTOR DE BALANCEO
         cout<<float(this->tablaRegistros->size)/float(this->tablaRegistros->sizeA)<<endl;
@@ -112,66 +106,23 @@ Bitacora::Bitacora(){
 
 
 void Bitacora::busquedaBitacora(){
-    string nombre, x, y, nom_archiv, respuesta;
-    x = "salida";
-    y = "-eq8.txt";
-    nombre = "archivo";
-    string contadorAString;
-    this->contador++;
-    contadorAString = to_string(this->contador);
-    nombre.append(contadorAString);
-    nom_archiv = x + contadorAString + y;
-
-    ofstream pov(nom_archiv);
-
     string ipInicial;
-    string ipFinal;
+    int respuesta=1;
+    while(respuesta==1){
+        cout<<endl;
+        cout<<"Ingresa tu ip a buscar"<<endl;
+        cin>>ipInicial;
+        this->tablaRegistros->get(ipInicial)->inorder();
+        cout<<endl;
+        cout<<"Deseas realizar otra busqueda?"<<endl;
+        cout<<"1 para si/ 0 para no"<<endl;
+        cin>>respuesta;
+        cout<<endl;
+        cout<<"TAMANIO"<<this->tablaRegistros->size<<endl;
 
-    cout<<"Ingresa tu ip inicial"<<endl;
-    cin>>ipInicial;
-    ipInicial.append(":0000");
-    cout<<endl;
-    cout<<"Ingresa tu ip final"<<endl;
-    cin>>ipFinal;
-    ipFinal.append(":0000");
-    cout<<endl;
-
-    MyNodoLL* actual=this->nodosIpOrdenada.head;
-
-    NodoRegistro nodoInicial("",ipInicial);
-    NodoRegistro nodoFinal("",ipFinal);
-
-    //Busqueda secuencial
-    for (int i=0; i < this->nodosIpOrdenada.length(); i++) {
-        if(actual->data.compareTwoNodos(nodoInicial)){
-            while(!actual->data.compareTwoNodos(nodoFinal)){
-                string mensaje=actual->data.getMensaje();
-                if(actual->next!=nullptr){
-                    pov << actual->data.getMensaje();
-                    if(!actual->next->data.compareTwoNodos(nodoFinal)){
-                        pov<<endl;
-                    }
-                    actual=actual->next;
-                }else{
-                    break;
-                }
-            }
-            if(actual->data.isNodoEqual(nodoFinal)){
-                if(!nodoInicial.isNodoEqual(nodoFinal)){
-                    pov <<endl<< actual->data.getMensaje();
-                }else{
-                    pov<< actual->data.getMensaje();
-                }
-            }
-            else if(!this->nodosIpOrdenada.tail->data.compareTwoNodos(nodoFinal)&&actual->next==nullptr){
-                pov<< actual->data.getMensaje();
-            }
-            return;
-        }
-        actual=actual->next;
     }
-    pov.close();
-    return;
+    cout<<endl;
+    cout<<"La busqueda ha finalizado"<<endl;
 }
 /*
 string Bitacora::numAFecha(int fecha){

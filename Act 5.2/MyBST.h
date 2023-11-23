@@ -42,7 +42,7 @@ class MyBST{
         MyNodeBST* root;
         bool search(int data,MyNodeBST* current);
         void preorder(MyNodeBST* current);
-        void inorder(MyNodeBST* current);
+        void inorder(MyNodeBST* current, int &nIps);
         void postorder(MyNodeBST* current);
         void revInorder(MyNodeBST* current, int &contador);
     //public:

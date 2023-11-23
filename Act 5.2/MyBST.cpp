@@ -140,24 +140,28 @@ void MyBST::preorder(){
 }
 
 //Complejidad de tipo Lineal O(n)
-void MyBST::inorder(MyNodeBST* current){
+void MyBST::inorder(MyNodeBST* current, int &nIps){
     if(current==nullptr){
         return;
     }
     else{
-        inorder(current->left);
+        inorder(current->left, nIps);
         cout<<current->fecha<<endl;
-        inorder(current->right);
+        nIps++;
+        inorder(current->right, nIps);
     }
 
 }
 
 //Complejidad de tipo Lineal O(n)
 void MyBST::inorder(){
+    cout<<endl;
     cout<<"IP: "<<this->ip<<endl;
+    int nIps=0;
      if(this->size!=0){
-        inorder(this->root);
+        inorder(this->root,nIps);
     }
+    cout<<"El numero de registros con esta direccion ip son "<<nIps<<endl;
 }
 
 //Complejidad de tipo Lineal O(n)

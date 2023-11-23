@@ -20,7 +20,7 @@ class Bitacora{
         ifstream archivo;
     public:
         Bitacora();
-        void BusquedaBitacora();
+        void busquedaBitacora();
 
 };
 
