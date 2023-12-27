@@ -1,0 +1,4 @@
+1-.Cambiar front end con diseño hogarico
+2-.Traducir la página
+3-.Conectar a dominio
+4-.Recetas mas buscadas

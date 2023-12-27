@@ -1,0 +1,14 @@
+Página de mi papa
+SuperEasy
+
+Personal
+	Viaje a la Paz
+	
+
+SWE
+	Internship
+	LeetCode Diario
+
+Rancho
+	Generar proyecto completo del rancho
+	Buscar al menos 3 clientes

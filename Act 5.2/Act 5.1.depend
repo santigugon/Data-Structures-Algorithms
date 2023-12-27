@@ -21,16 +21,16 @@
 	"MyLinkedList.h"
 	"string"
 
-1700697366 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.cpp
+1701054837 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.cpp
 	"MyLinkedList.h"
 	"MyHashTable.h"
 
-1700693002 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mylinkedlist.h
+1701055105 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mylinkedlist.h
 	<iostream>
 	"string"
 	"MyBST.h"
 
-1700692907 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.h
+1701054849 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.h
 	<list>
 	<iostream>
 	"MyLinkedList.h"
@@ -44,23 +44,22 @@
 	<string>
 	<vector>
 
-1700700179 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\main.cpp
+1701054853 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\main.cpp
 	<iostream>
 	"MyHashTable.h"
 	"Bitacora.h"
 
-1700699861 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.h
+1701055282 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.h
 	"MyLinkedList.h"
-	"NodoRegistro.h"
 	"MyBST.h"
 	"MyHashTable.h"
 	<fstream>
 
-1700700124 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.h
+1701055036 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.h
 	<iostream>
 	<string>
 
-1700693019 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mylinkedlist.cpp
+1701054878 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mylinkedlist.cpp
 	"MyLinkedList.h"
 	<iostream>
 
@@ -75,13 +74,13 @@
 	<queue>
 	<vector>
 
-1700700814 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.cpp
+1701054888 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.cpp
 	<iostream>
 	"MyBST.h"
 	<queue>
 	<vector>
 
-1700700867 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.cpp
+1701064271 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.cpp
 	"Bitacora.h"
 	<unordered_map>
 

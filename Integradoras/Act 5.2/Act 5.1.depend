@@ -1,0 +1,86 @@
+# depslib dependency file v1.0
+1700628286 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\main.cpp
+	<iostream>
+	"MyHashTable.h"
+
+1700616755 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\mylinkedlist.cpp
+	"MyLinkedList.h"
+	<iostream>
+
+1700616674 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\mylinkedlist.h
+	<iostream>
+	"string"
+
+1700619348 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\myhashtable.cpp
+	"MyLinkedList.h"
+	"MyHashTable.h"
+
+1700616154 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.1\myhashtable.h
+	<list>
+	<iostream>
+	"MyLinkedList.h"
+	"string"
+
+1701054837 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.cpp
+	"MyLinkedList.h"
+	"MyHashTable.h"
+
+1701055105 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mylinkedlist.h
+	<iostream>
+	"string"
+	"MyBST.h"
+
+1701054849 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\myhashtable.h
+	<list>
+	<iostream>
+	"MyLinkedList.h"
+	"string"
+
+1700686902 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\nodoregistro.cpp
+	"NodoRegistro.h"
+
+1699375523 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\nodoregistro.h
+	<iostream>
+	<string>
+	<vector>
+
+1701054853 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\main.cpp
+	<iostream>
+	"MyHashTable.h"
+	"Bitacora.h"
+
+1701055282 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.h
+	"MyLinkedList.h"
+	"MyBST.h"
+	"MyHashTable.h"
+	<fstream>
+
+1701055036 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.h
+	<iostream>
+	<string>
+
+1701054878 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mylinkedlist.cpp
+	"MyLinkedList.h"
+	<iostream>
+
+1700688212 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.cpp
+	"Bitacora.h"
+	"MyBST.cpp"
+	<unordered_map>
+
+1699421370 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.cpp
+	<iostream>
+	"MyBST.h"
+	<queue>
+	<vector>
+
+1701054888 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\mybst.cpp
+	<iostream>
+	"MyBST.h"
+	<queue>
+	<vector>
+
+1700979363 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 5.2\bitacora.cpp
+	"Bitacora.h"
+	<unordered_map>
+

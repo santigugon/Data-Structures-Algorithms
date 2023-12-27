@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1696989149 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\main.cpp
+	<iostream>
+	<vector>
+	<string>
+	"Bitacora.h"
+	<fstream>
+
+1696989124 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.cpp
+	"MyLinkedList.h"
+	<iostream>
+
+1696989962 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\mylinkedlist.h
+	"NodoRegistro.h"
+
+1696989132 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\nodoregistro.h
+	<iostream>
+	<string>
+	<vector>
+
+1696989128 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\nodoregistro.cpp
+	"NodoRegistro.h"
+
+1696959621 source:c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.cpp
+	"Bitacora.h"
+	<unordered_map>
+
+1696989104 c:\users\santi\onedrive\documents\programacion\3-semestre-guadalajara\estructura de datos y algoritmos fundamentales\act 2.3\bitacora.h
+	"MyLinkedList.h"
+	"NodoRegistro.h"
+	<fstream>
+

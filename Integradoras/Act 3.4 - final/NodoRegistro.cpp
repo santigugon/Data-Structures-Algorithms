@@ -11,7 +11,7 @@ using namespace std;
     NodoRegistro::NodoRegistro(string mensaje, string ip){
        this->mensaje=mensaje;
        this->ip=ip;
-      // this->createJerarquias();
+       this->createJerarquias();
     }
 
     //Complejidad de tipo constante O(1)
